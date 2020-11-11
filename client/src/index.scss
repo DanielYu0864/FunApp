@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap');
 
+@import 'media-queries';
+
 
 *, *::before, *::after {
   margin: 0;
@@ -10,8 +12,20 @@
 html {
   font-size: 62.5%;
 
+    @include tablet {
+        font-size: 56.25%;
+    }
+  
+    // 8px 
+    @include phone {
+        font-size: 50%;
+    }
+
   --orange: #E07A5F;
   --dark-blue: #3D405B;
+  --green: #81B29A;
+  --champagne: #F2CC8F;
+  --eggshell: #F4F1DE;
 
   //https://coolors.co/f4f1de-e07a5f-3d405b-81b29a-f2cc8f
 

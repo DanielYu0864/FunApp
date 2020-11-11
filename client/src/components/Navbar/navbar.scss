@@ -1,0 +1,19 @@
+@import '../../media-queries';
+
+.navbar {
+
+    position: absolute;
+
+    color: #fff;
+
+    padding: 4rem 5rem;
+
+    @include phone {
+        padding: 3rem;
+    }
+
+    &__brand {
+        font-size: 3.2rem;
+    }
+
+}
