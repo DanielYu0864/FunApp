@@ -7,8 +7,8 @@ function App() {
     <main>
       <Navbar />
       <Category type="content" items={{
-          type: 'img',
-          items: ['food.png', 'animal.png', 'soccer.jpg']
+          type: 'text',
+          items: ['Games', 'Books', 'Videos']
         }} />
     </main>
   );
