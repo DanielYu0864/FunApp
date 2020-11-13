@@ -1,0 +1,45 @@
+@mixin respond($size) {
+
+    @media only screen and(max-width: $size) {
+        @content;
+    }
+
+}
+
+@mixin mini {
+    @media only screen and(max-width: 25em) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media only screen and(max-width: 35em) {
+        @content;
+    }
+}
+
+@mixin phablet {
+    @media only screen and(max-width: 45em) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media only screen and(max-width: 56em) {
+        @content;
+    }
+}
+
+@mixin tabletLarge {
+    @media only screen and(max-width: 75em) {
+        @content;
+    }
+}
+
+
+@mixin laptop {
+    @media only screen and(max-width: 88em) {
+        @content;
+    }
+}
+
