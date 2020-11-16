@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Age Group</title>
+    <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- FONTS -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Stalinist+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body
+    class="relative"
+    style="
+      min-height: 100vh;
+      background: url('./img/pencils.jpg') no-repeat bottom center fixed;
+      background-size: cover;
+    "
+  >
+    <h1 class="text-5xl text-blue-600 font-stalinist text-center pt-10">
+      Fun App
+    </h1>
+    <div class="absolute bottom-0 w-full mb-12">
+      <div class="flex container mx-auto">
+        <div class="w-1/3 flex items-center justify-center">
+          <button
+            class="px-10 py-5 rounded-xl shadow font-bold text-white bg-yellow-500"
+          >
+            Age 0-3
+          </button>
+        </div>
+        <div class="w-1/3 flex items-center justify-center">
+          <button
+            class="px-10 py-5 rounded-xl shadow font-bold text-white bg-blue-400"
+          >
+            Age 4-8
+          </button>
+        </div>
+        <div class="w-1/3 flex items-center justify-center">
+          <button
+            class="px-10 py-5 rounded-xl shadow font-bold text-white bg-red-500"
+          >
+            Age 9-12
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
