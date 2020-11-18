@@ -28,7 +28,7 @@ connection.once('open', function() {
 });
 // routes
 require('./router/apiRoute')(app);
-
+require('./router/loginRoute')(app);
 // Send every request to the React app
 // Define any API routes before this runs
 app.get("*", function(req, res) {
