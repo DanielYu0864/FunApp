@@ -1,6 +1,7 @@
 //import Login from './Login/Login.js';
 import Category from './Category/Category';
 import Navbar from './components/Navbar/Navbar';
+import Login from './Login/Login';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
           type: 'text',
           items: ['Games', 'Books', 'Videos']
         }} />
+      {/* <Login/> */}
     </main>
   );
 }
