@@ -1,0 +1,31 @@
+.navbar {
+  position: absolute;
+  z-index: 500;
+
+  color: #fff;
+
+  padding: 4rem 5rem;
+
+  @include phone {
+    padding: 3rem;
+  }
+
+  &__brand {
+    font-size: 3.2rem;
+    font-family: var(--brand-font);
+    letter-spacing: 0.15em;
+    color: #fff;
+
+    @include phone {
+      font-size: 2.4rem;
+    }
+
+    &.green {
+      color: rgb(34, 117, 9);
+    }
+
+    &.purple {
+      color: #805ad5;
+    }
+  }
+}

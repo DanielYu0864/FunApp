@@ -1,0 +1,40 @@
+.start {
+  background-image: url("background.jpg");
+  background-size: cover;
+  background-position: center;
+
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  position: relative;
+
+  padding: 8rem;
+
+  &__btn {
+    border: none;
+    display: block;
+
+    width: max-content;
+
+    padding: 2.5rem 4rem;
+    border-radius: 5px;
+
+    font-size: 2.4rem;
+
+    background-color: #ed8936;
+    color: #fff;
+    font-family: inherit;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: background 0.3s ease;
+
+    &:hover {
+      background-color: darken(#ed8936, 10%);
+    }
+  }
+}
