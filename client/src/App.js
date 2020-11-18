@@ -6,8 +6,7 @@ import Login from './components/Forms/Login.js';
 //import Start from './Start/Start';
 import Category from './components/Category/Category';
 import Navbar from './components/Navbar/Navbar';
-
-
+import Login from './Login/Login';
 
 export default class App extends React.Component {
   constructor(props) {

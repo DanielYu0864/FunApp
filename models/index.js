@@ -1,4 +1,4 @@
 module.exports ={
-  Age: require('./age'),
-  Topic: require('./topic')
+  User: require('./User'),
+  Favorites: require('./Favorites')
 };
