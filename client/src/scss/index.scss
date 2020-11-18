@@ -1,0 +1,16 @@
+// Import Fonts
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Stalinist+One&display=swap");
+
+// Import SCSS Mixins
+@import "mixins";
+@import "media-queries";
+
+// Import Base Files
+@import "base";
+
+// Import Components
+@import "../components/Navbar/navbar";
+@import "../components/Forms/form";
+@import "../components/Category/category";
+@import "../components/Start/start";

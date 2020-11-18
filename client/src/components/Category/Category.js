@@ -1,5 +1,3 @@
-import './category.scss';
-
 const Category = props => {
 
     const mainClass = `category category--${props.type}`;

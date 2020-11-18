@@ -1,0 +1,53 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+
+  @include tablet {
+    font-size: 56.25%;
+  }
+
+  // 8px
+  @include phone {
+    font-size: 50%;
+  }
+
+  --orange: #e07a5f;
+  --dark-blue: #3d405b;
+  --green: #81b29a;
+  --champagne: #f2cc8f;
+  --eggshell: #f4f1de;
+
+  --brand-font: "Stalinist One", cursive;
+
+  //https://coolors.co/f4f1de-e07a5f-3d405b-81b29a-f2cc8f
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  box-sizing: border-box;
+  font-size: 1.6rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  width: 100%;
+  overflow-x: hidden;
+
+  font-family: "Quicksand", "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
