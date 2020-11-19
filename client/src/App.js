@@ -8,8 +8,7 @@ import Login from './components/Forms/Login.js';
 //import CategoryPicker from './components/Category/CategoryPicker';
 //import MediaPicker from './components/Category/MediaPicker';
 import Navbar from './components/Navbar/Navbar';
-
-
+import Login from './Login/Login';
 
 export default class App extends React.Component {
   constructor(props) {
