@@ -4,7 +4,9 @@ import React from 'react';
 //import Register from './components/Forms/Register';
 import Login from './components/Forms/Login.js';
 //import Start from './Start/Start';
-import Category from './components/Category/Category';
+//import AgePicker from './components/Category/AgePicker';
+//import CategoryPicker from './components/Category/CategoryPicker';
+//import MediaPicker from './components/Category/MediaPicker';
 import Navbar from './components/Navbar/Navbar';
 
 
@@ -23,9 +25,3 @@ export default class App extends React.Component {
     )
   }
 }
-
-
-/*<Category type="content" items={{
-  type: 'text',
-  items: ['Games', 'Books', 'Videos']
-}} />*/
