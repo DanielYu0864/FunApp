@@ -1,27 +1,27 @@
-const Category = props => {
+import React from 'react';
 
-    const mainClass = `category category--${props.type}`;
+export default class Category extends React.Component {
 
+    constructor(props) {
+        super(props);
 
+        this.children = props.children;
+        this.css = 'category';
+        if (props.css) this.css += ` ${props.css}`;
 
-    return (
-        <section className={mainClass}>
-            <div className="category__container">
+        this.align = props.align ? ` ${props.align}` : '';
+    }
 
-                {props.items.items.map((i, idx) => (
-                    <button className="category__item" key={idx}>
-                        {props.items.type === 'text' ? (
-                            <h2>{i}</h2>
-                        ) : (
-                            <img src={i} />
-                        )}
-                    </button>
-                ))}
+    render() {
+        
+        return (
+            <section className={this.css}>
+                <div className={`category__container${this.align}`}>
+                    {this.children}
+                </div>
+            </section>
+        )
 
-            </div>
-        </section>
-    )
+    }
 
 }
-
-export default Category;
