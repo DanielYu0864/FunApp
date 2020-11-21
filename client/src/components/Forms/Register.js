@@ -20,7 +20,13 @@ export default class Register extends React.Component {
           <TextInput label="Name" placeholder="Your Name" />
           <TextInput type="email" label="Email Address" placeholder="hello@fun.com" />
           <TextInput type="password" label="Password" />
-          <Button color="purple">Create Account</Button>
+          <a href='/login'>
+            <Button color="purple">Create Account</Button>
+          </a>
+          <a href='/login'>
+            <Button color="purple">Go Back to Login</Button>
+          </a>
+
 
         </div>
 
