@@ -19,7 +19,14 @@ export default class Login extends React.Component {
 
           <TextInput type="email" label="Email Address" placeholder="hello@fun.com" />
           <TextInput type="password" label="Password" />
-          <Button color="purple">Create Account</Button>
+
+          <a href='/age'>
+            <Button color="purple">Login</Button>
+          </a>
+          <a href='/register'>
+            <Button color="purple">Register</Button>
+          </a>
+
 
         </div>
 
