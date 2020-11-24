@@ -7,7 +7,6 @@ import Start from './components/Start/Start';
 import AgePicker from './components/Category/AgePicker';
 import CategoryPicker from './components/Category/CategoryPicker';
 import MediaPicker from './components/Category/MediaPicker';
-import Navbar from './components/Navbar/Navbar';
 // import Login from './Login/Login';
 
 export default class App extends React.Component {
@@ -28,7 +27,6 @@ export default class App extends React.Component {
   render() {
     return (
       <main>
-        <Navbar color="purple" />
         <Router>
           <Switch>
             <Route exact path='/category'>

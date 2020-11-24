@@ -1,8 +1,10 @@
 import React from 'react';
 import TextInput from './TextInput';
 import Button from './Button';
-import API from '../../utils/API'
+import API from '../../utils/API';
+import Navbar from '../Navbar/Navbar';
 import { Redirect } from 'react-router-dom';
+
 
 export default class Login extends React.Component {
 
@@ -61,48 +63,50 @@ export default class Login extends React.Component {
     } else {
       console.log(this.state)
       return (
-        <section className="form bg-green">
-          <form onSubmit={this.handleSubmit}>
-            <div className="form__grid">
+        <main>
+        <Navbar color="purple" />
+          <section className="form bg-green">
+            <form onSubmit={this.handleSubmit}>
+              <div className="form__grid">
 
-              <div className="form__content">
+                <div className="form__content">
 
-                {/* <TextInput type="email" label="Email Address" placeholder="hello@fun.com" /> */}
+                  {/* <TextInput type="email" label="Email Address" placeholder="hello@fun.com" /> */}
 
-                <h2 style={{marginBottom:'18px'}}>Login</h2>
-                <TextInput
-                  type="text"
-                  label="Username"
-                  placeholder="Your Username"
-                  value={this.state.username}
-                  handleInputChange={this.handleInputChange}
-                />
-                <TextInput
-                  type="password"
-                  label="Password"
-                  placeholder='Your password'
-                  value={this.state.password}
-                  handleInputChange={this.handleInputChange}
-                />
+                  <h2 className="form__title">Login</h2>
+                  <TextInput
+                    type="text"
+                    label="Username"
+                    placeholder="Your Username"
+                    value={this.state.username}
+                    handleInputChange={this.handleInputChange}
+                  />
+                  <TextInput
+                    type="password"
+                    label="Password"
+                    placeholder='Your password'
+                    value={this.state.password}
+                    handleInputChange={this.handleInputChange}
+                  />
 
-                <Button type='submit' color="purple">Login</Button>
+                  <Button type='submit' color="purple">Login</Button>
 
-                <a href='/register'>
-                  Register
-                </a>
+                  <p className="form__alt-link"><a href='/register'>Register</a></p>
 
+
+                </div>
+
+                <div className="form__image">
+                  <img src="/img/illustration.svg" alt="illustration of children having fun" />
+                </div>
 
               </div>
-
-              <div className="form__image">
-                <img src="/img/illustration.svg" alt="illustration of children having fun" />
-              </div>
-
-            </div>
-          </form>
+            </form>
 
 
-        </section>
+          </section>
+        </main>
+        
       )
 
     }

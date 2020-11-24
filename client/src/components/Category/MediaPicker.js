@@ -11,7 +11,7 @@ export default class MediaPicker extends React.Component {
   render() {
 
     return (
-      <Category css="media-picker" align="bottom">
+      <Category css="media-picker" align="bottom" navbarColor="red">
         <Button color="#ecc94b">Games</Button>
         <Button color="#63b3ed">Videos</Button>
         <Button color="#f56565">Books</Button>
