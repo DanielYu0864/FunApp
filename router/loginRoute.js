@@ -5,7 +5,7 @@ module.exports = (app) => {
   app.post('/user/register', (req, res) => {
     console.log('Post called');
     console.log(req.body);
-    const { username, password } = req.body;
+    const { username, password, email } = req.body;
     let errors = [];
 
     if (!username ||!password) {
@@ -20,28 +20,38 @@ module.exports = (app) => {
       console.log(errors);
       res.json(errors)
     } else {
-      db.User.findOne({username: username})
-        .then(user => {
-          if(user) {
-            console.log('user already exists');
-            res.json('user exists');
-          } else {
-            db.User.create({
-              username: username,
-              password: password
-            })
-            .then(data => {
-              console.log(data);
-              // res.redirect('/login')
-              res.json(data);
-            })
-            .catch(err => {
-              // res.redirect('/register')
-              console.log(err);
-              res.json(err);
-            });
-          }
-        }).catch(err => console.log(err));
+      db.User.findOne({email: email})
+      .then(emailData => {
+        if(emailData) {
+          console.log('email exists');
+          res.json('email exists');
+        } else {
+          db.User.findOne({username: username})
+          .then(user => {
+            if(user) {
+              console.log('user already exists');
+              res.json('user exists');
+            } else {
+              db.User.create({
+                email: email,
+                username: username,
+                password: password
+              })
+              .then(data => {
+                console.log(data);
+                // res.redirect('/login')
+                res.json(data);
+              })
+              .catch(err => {
+                // res.redirect('/register')
+                console.log(err);
+                res.json(err);
+              });
+            }
+          })
+          .catch(err => console.log(err));
+        }
+      });
 
     }
 
@@ -71,7 +81,7 @@ module.exports = (app) => {
         } else {
           if(userInfo.password === password) {
             console.log(true)
-            res.redirect('/age');
+            // res.redirect('/age');
             return true;
           } else {
             console.log('password is not correct')

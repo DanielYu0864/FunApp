@@ -7,24 +7,53 @@ export default class Register extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      email: '',
       username: '',
       password: '',
+      password2: '',
       registered: false
    }
   }
 
   handleInputChange = (event) => {
-    if(event.target.type === 'text') {
-      this.setState({
-        username: event.target.value
-      });
-      // console.log(this.state)
-    } else if(event.target.type === 'password') {
-      this.setState({
-        password: event.target.value
-      });
-      // console.log(this.state)
+    console.log(event.target)
+    let name = event.target.name
+    switch(name){
+      case 'email':
+        this.setState({
+          email: event.target.value
+        })
+      break;
+      case 'username':
+        this.setState({
+          username: event.target.value
+        })
+      break;
+      case 'password':
+        this.setState({
+          password: event.target.value
+        })
+      break;
+      case 'password2':
+        this.setState({
+          password2: event.target.value
+        })
+      break;
+      default:
+        break;
     }
+    // console.log(event.target)
+    // if(event.target.name === 'username') {
+    //   this.setState({
+    //     username: event.target.value
+    //   });
+    //   // console.log(this.state)
+    // } else if(event.target.name === 'password') {
+    //   this.setState({
+    //     password: event.target.value
+    //   });
+    //   // console.log(this.state)
+    // }
   }
   //* handle input in diffent function
   // handleUsernameChange = (event) => {
@@ -41,16 +70,24 @@ export default class Register extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    const {username, password} = this.state
+    const {email, username, password, password2} = this.state
     // alert(`${ username } # ${ password }`);
-    if(!username || ! password) {
-      return username ? alert('Username can not be empty')
-            :password ? alert('Password can not be empty')
-            : '';
-    } else if (password.length < 6) {
+    if(!email ||!username || ! password || !password2) {
+      return !email ?  alert('Email can not be empty')
+            : !username ? alert('Username can not be empty')
+            : !password ? alert('Password can not be empty')
+            : !password2 ? alert('Password can not be empty'): ''
+    }
+
+    if (password.length < 6) {
       return alert('Password has to be longer than 6')
+    }
+
+    if (password !== password2) {
+      return alert('Password has to be the same')
     } else {
       API.register({
+        email: email,
         username: username,
         password: password
       })
@@ -58,6 +95,9 @@ export default class Register extends React.Component {
         if(e.data === 'user exists') {
           console.log(e.data);
           alert('username exists')
+        } else if(e.data === 'email exists') {
+          console.log(e.data);
+          alert('email exists')
         } else {
           console.log(e)
           alert('account created')
@@ -80,25 +120,40 @@ export default class Register extends React.Component {
           <div className="form__content">
             <h2 style={{marginBottom:'18px'}}>Register</h2>
             <TextInput
+              name='email'
+              type="email"
+              label="Email Address"
+              placeholder="hello@fun.com"
+              value={this.state.email}
+              handleInputChange={this.handleInputChange}
+            />
+
+            <TextInput
+              name='username'
               type="text"
               label="Username"
               placeholder="Your Username"
               value={this.state.username}
-              // handleUsernameChange={this.handleUsernameChange}
               handleInputChange={this.handleInputChange}
             />
-            {/* <TextInput type="email" label="Email Address" placeholder="hello@fun.com" /> */}
             <TextInput
+              name='password'
               type="password"
               label="Password"
               placeholder='Your password'
               value={this.state.password}
-              // handlePasswordChange={this.handlePasswordChange}
               handleInputChange={this.handleInputChange}
             />
-            <a href='/login'>
+            <p style={{fontSize: '10px', position: 'relative', bottom: '24px'}}>Passwords must be at least 6 characters. </p>
+            <TextInput
+              name='password2'
+              type="password"
+              label="Re-enter Password"
+              placeholder='Confirm your password'
+              value={this.state.password2}
+              handleInputChange={this.handleInputChange}
+            />
               <Button color="purple">Create Account</Button>
-            </a>
             <a href='/login'>
               Go Back to Login
             </a>
