@@ -13,6 +13,16 @@ import Navbar from './components/Navbar/Navbar';
 export default class App extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      isLogin: false
+    }
+    console.log(this.state.isLogin);
+  }
+
+  afterLogin = () => {
+    this.setState({
+      isLogin: true
+    })
   }
 
   render() {
@@ -31,7 +41,10 @@ export default class App extends React.Component {
               <AgePicker/>
             </Route>
             <Route exact path='/login'>
-              <Login/>
+              <Login
+                isLogin={this.state.isLogin}
+                afterLogin={this.afterLogin}
+              />
             </Route>
             <Route exact path='/register'>
               <Register/>
