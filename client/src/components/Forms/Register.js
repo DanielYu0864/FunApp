@@ -16,7 +16,7 @@ export function Register() {
     // console.log(isRegister);
     if(isRegister) console.log('is register!')
   }, [isRegister])
-
+  //* handle the input value
   const handleInputChange = (event) => {
     // console.log(event.target)
     let name = event.target.name
@@ -37,7 +37,7 @@ export function Register() {
         break;
     };
   }
-
+  //* handle register check and api call
   const handleSubmit = event => {
     event.preventDefault();
     if(!email ||!username || ! password || !password2) {
@@ -77,6 +77,7 @@ export function Register() {
       })
     }
   }
+  //* check if registered
   if(isRegister) {
     return<Redirect push to="/login" />
   }

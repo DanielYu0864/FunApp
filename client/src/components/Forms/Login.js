@@ -22,7 +22,7 @@ function Login() {
       setPassword(event.target.value);
     }
   }
-  //* handle the login check
+  //* handle the login check and api call
   const handleSubmit = event => {
     event.preventDefault();
     if(!username || ! password) {
