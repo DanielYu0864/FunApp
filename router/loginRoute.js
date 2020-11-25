@@ -78,13 +78,14 @@ module.exports = (app) => {
       }).then(userInfo => {
         if(!userInfo) {
           console.log('no username');
+          res.json('no username')
         } else {
           if(userInfo.password === password) {
             console.log(true)
-            // res.redirect('/age');
-            return true;
+            res.json('logined');
           } else {
             console.log('password is not correct')
+            res.json('password is not correct')
           }
         }
 
