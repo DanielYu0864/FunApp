@@ -1,6 +1,7 @@
 import React from 'react'
 
-const TextInput = ({value, handleInputChange, type, label, placeholder, name}) => {
+const TextInput = ({value, handleInputChange, type, hint, label, placeholder, name}) => {
+
 
     return (
         <div className="form__input">
@@ -13,6 +14,7 @@ const TextInput = ({value, handleInputChange, type, label, placeholder, name}) =
                 value={value}
                 onChange={handleInputChange}
             />
+            <p className="form__input-hint">{hint}</p>
         </div>
     )
 

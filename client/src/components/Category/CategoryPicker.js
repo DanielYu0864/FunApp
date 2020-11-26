@@ -11,8 +11,8 @@ export default class CategoryPicker extends React.Component {
   render() {
 
     return (
-      <Category css="category-picker" align="top">
-        <Button color="#f687b3;">Animals</Button>
+      <Category css="category-picker" align="top" navbarColor="white">
+        <Button color="#ecc94b">Animals</Button>
         <Button color="#63b3ed">Education</Button>
         <Button color="#e53e3e">Food</Button>
       </Category>

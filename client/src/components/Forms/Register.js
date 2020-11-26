@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import TextInput from './TextInput';
 import Button from './Button';
-import API from '../../utils/API';
+import API from '../../utils/API'
+import Navbar from '../Navbar/Navbar';
 import { Redirect } from 'react-router-dom';
 
 
@@ -77,6 +78,7 @@ export function Register() {
       })
     }
   }
+
   //* check if registered
   if(isRegister) {
     return<Redirect push to="/login" />

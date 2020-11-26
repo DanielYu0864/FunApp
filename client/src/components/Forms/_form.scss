@@ -119,6 +119,11 @@
         font-size: 2.2rem;
       }
     }
+
+    &-hint {
+      font-size: 1.4rem;
+      margin-top: 1rem;
+    }
   }
 
   &__btn {
@@ -145,5 +150,14 @@
     &:focus {
       outline: none;
     }
+  }
+
+  &__title {
+    margin-bottom: 2.4rem;
+    font-size: 2.8rem;
+  }
+
+  &__alt-link {
+    margin-top: 1.5rem;
   }
 }

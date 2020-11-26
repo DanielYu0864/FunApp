@@ -11,6 +11,7 @@ import Navbar from './components/Navbar/Navbar';
 import flash from 'express-flash';
 // import Login from './Login/Login';
 
+
 export default class App extends React.Component {
   constructor(props) {
     super(props);
@@ -29,7 +30,6 @@ export default class App extends React.Component {
   render() {
     return (
       <main>
-        <Navbar color="purple" />
         <Router>
           <Switch>
             <Route exact path='/category'>

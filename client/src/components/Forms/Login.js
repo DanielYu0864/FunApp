@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import TextInput from './TextInput';
 import Button from './Button';
-import API from '../../utils/API'
+import API from '../../utils/API';
+import Navbar from '../Navbar/Navbar';
 import { Redirect } from 'react-router-dom';
 
 
@@ -49,6 +50,7 @@ function Login() {
 
     }
   }
+
   //* if login redirect to age page
   if(isLogin) {
     return <Redirect push to="/age" />
@@ -58,9 +60,11 @@ function Login() {
           <form onSubmit={handleSubmit}>
             <div className="form__grid">
 
-              <div className="form__content">
 
-                {/* <TextInput type="email" label="Email Address" placeholder="hello@fun.com" /> */}
+                <div className="form__content">
+
+                  {/* <TextInput type="email" label="Email Address" placeholder="hello@fun.com" /> */}
+
 
                 <h2 style={{marginBottom:'18px'}}>Login</h2>
                 <TextInput
@@ -78,22 +82,20 @@ function Login() {
                   handleInputChange={handleInputChange}
                 />
 
-                <Button type='submit' color="purple">Login</Button>
 
-                <a href='/register'>
-                  Register
-                </a>
+                  <Button type='submit' color="purple">Login</Button>
 
+                  <p className="form__alt-link"><a href='/register'>Register</a></p>
+
+
+                </div>
+
+                <div className="form__image">
+                  <img src="/img/illustration.svg" alt="illustration of children having fun" />
+                </div>
 
               </div>
-
-              <div className="form__image">
-                <img src="/img/illustration.svg" alt="illustration of children having fun" />
-              </div>
-
-            </div>
-          </form>
-
+            </form>
 
         </section>
   )

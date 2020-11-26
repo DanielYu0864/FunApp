@@ -20,12 +20,24 @@
       font-size: 2.4rem;
     }
 
+    &.dark {
+      color: #333;
+    }
+
     &.green {
       color: rgb(34, 117, 9);
     }
 
     &.purple {
       color: #805ad5;
+    }
+
+    &.red {
+      color: rgb(238, 44, 44);
+    }
+
+    &.pink {
+      color: rgb(235, 142, 196);
     }
   }
 }
