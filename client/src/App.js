@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 // IMPORT COMPONENTS
 import Register from './components/Forms/Register';
 import Login from './components/Forms/Login.js';
@@ -7,6 +7,8 @@ import Start from './components/Start/Start';
 import AgePicker from './components/Category/AgePicker';
 import CategoryPicker from './components/Category/CategoryPicker';
 import MediaPicker from './components/Category/MediaPicker';
+import Navbar from './components/Navbar/Navbar';
+import flash from 'express-flash';
 // import Login from './Login/Login';
 
 
@@ -19,11 +21,11 @@ export default class App extends React.Component {
     console.log(this.state.isLogin);
   }
 
-  afterLogin = () => {
-    this.setState({
-      isLogin: true
-    })
-  }
+  // afterLogin = () => {
+  //   this.setState({
+  //     isLogin: true
+  //   })
+  // }
 
   render() {
     return (
@@ -39,11 +41,12 @@ export default class App extends React.Component {
             <Route exact path='/age'>
               <AgePicker/>
             </Route>
+            {/* <Route exact path="/login">
+              {!this.isLogin ? <Redirect to="/login" /> : <Redirect to='/age'/>}
+              <Login/>
+            </Route> */}
             <Route exact path='/login'>
-              <Login
-                isLogin={this.state.isLogin}
-                afterLogin={this.afterLogin}
-              />
+              <Login/>
             </Route>
             <Route exact path='/register'>
               <Register/>
