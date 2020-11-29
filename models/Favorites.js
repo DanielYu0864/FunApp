@@ -2,8 +2,13 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const FavoriteSchema = new Schema({
-  title : String,
-  url : String
+  'age': String,
+  'type': String,
+  'title': String,
+  'imbedLind': String,
+  'wideth': String,
+  'height': String,
+  'scrolling': String
 });
 
 const Favorite = mongoose.model('Favorite', FavoriteSchema);

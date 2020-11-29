@@ -4,6 +4,12 @@ object-assign
 @license MIT
 */
 
+/*!
+ * express-flash
+ * Copyright(c) 2012 RGBboy <me@rgbboy.com>
+ * MIT Licensed
+ */
+
 /** @license React v0.20.1
  * scheduler.production.min.js
  *
