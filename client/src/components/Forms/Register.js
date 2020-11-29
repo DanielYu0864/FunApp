@@ -85,7 +85,7 @@ export function Register() {
   }
   return (
       <section className="form">
-
+        <Navbar/>
         <form onSubmit={handleSubmit}>
         <div className="form__grid">
 
@@ -125,7 +125,8 @@ export function Register() {
               value={password2}
               handleInputChange={handleInputChange}
             />
-              <Button color="purple">Create Account</Button>
+
+            <Button color="purple">Create Account</Button>
             <a href='/login'>
               Go Back to Login
             </a>

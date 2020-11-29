@@ -57,6 +57,7 @@ function Login() {
   }
   return (
       <section className="form bg-green">
+          <Navbar/>
           <form onSubmit={handleSubmit}>
             <div className="form__grid">
 

@@ -9,6 +9,7 @@ import CategoryPicker from './components/Category/CategoryPicker';
 import MediaPicker from './components/Category/MediaPicker';
 import Navbar from './components/Navbar/Navbar';
 import flash from 'express-flash';
+import GameChoosePage from './pages/GameChoosePage';
 // import Login from './Login/Login';
 
 
@@ -50,6 +51,9 @@ export default class App extends React.Component {
             </Route>
             <Route exact path='/register'>
               <Register/>
+            </Route>
+            <Route exact path='/game'>
+              <GameChoosePage/>
             </Route>
             <Route exact path='/'>
               <Start/>
