@@ -15,18 +15,11 @@ function MediaPicker() {
       </Link>
       <Link to={{ pathname: '/video', state: { age: age } }}>
         <Button color="#63b3ed">Videos</Button>
-// <<<<<<< Faranak-views
-//       </Category>
-//     )
-
-//   }
-// =======
       </Link>
       <Button color="#f56565">Books</Button>
       <a href='/favorite'><FavoriteButton/></a>
     </Category>
   )
 }
-// >>>>>>> main
 
 export default MediaPicker;
