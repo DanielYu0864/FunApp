@@ -4,7 +4,7 @@
         "age": "0-3, 4-8",
         "type": "fun, animals",
         "title": "Walrus Goodbye Song",
-        "imbedLink": "https://www.youtube.com/embed/0LDArAJf7-c",
+        "imbedLink": "https://www.youtube.com/embed/0LDArAJf7-c?modestbranding=1&rel=0",
         "width": "1240" ,
         "height": "564",
         "frameborder":"0",
@@ -16,12 +16,32 @@
         "age": "0-3, 4-8",
         "type": "fun, animals",
         "title": "Pete the Cat: I Love my White Shoes",
-        "imbedLink": "https://www.youtube.com/embed/fj_z6zGQVyM",
+        "imbedLink": "https://www.youtube.com/embed/fj_z6zGQVyM?modestbranding=1&rel=0",
         "width": "1240" ,
         "height": "564",
         "frameborder":"0",
         "scrolling": "no"
-
+    },
+    {
+        "id": 3,
+        "age": "9-12",
+        "type": "fun",
+        "title": "Funny Animated Cartoon",
+        "imbedLink": "https://www.youtube.com/embed/5NP_0JIv0W8?modestbranding=1&rel=0",
+        "width": "1240" ,
+        "height": "564",
+        "frameborder":"0",
+        "scrolling": "no"
+    },
+    {
+        "id": 4,
+        "age" :"all",
+        "type": "education",
+        "title": "ReactJS Tutorial - 2 - Hello World",
+        "imbedLink": "https://www.youtube.com/embed/9hb_0TZ_MVI?modestbranding=1&rel=0",
+        "width":"1240",
+        "height":"564",
+        "frameborder":"0",
+        "scrolling": "off"
     }
-    
 ]

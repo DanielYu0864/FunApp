@@ -1,8 +1,12 @@
 import React, {useState, useEffect}from 'react'
 import GameContainer from '../GameContainer';
+// <<<<<<< Faranak-views
 import Button from '../Category/Button';
 import Navbar from '../Navbar/Navbar';
 
+// =======
+import FavoriteButton from '../FavoriteButton';
+// >>>>>>> main
 function GamePage({gameList}) {
   // console.log(gameList)
   //* set state
@@ -33,7 +37,9 @@ function GamePage({gameList}) {
   }
   //* change game state to the game data when button click
   const gameChosen = async (id) => {
-    await setGame(gameArr[id - 1]);
+    let gameInfo = gameArr.filter(e => e.id === id);
+    // console.log(gameInfo);
+    await setGame(gameInfo[0]);
     await setGameChoose(true);
   };
   //* back to the game choose page
@@ -73,20 +79,24 @@ function GamePage({gameList}) {
   /*
   <div>
       <h2>Game List</h2>
+// <<<<<<< Faranak-views
       //{
        // gameArr.map(e => (
           //<button onClick={() => gameChosen(e.id)} key={e.id}>
            // {e.title}
+// =======
+      <a href='/favorite'><FavoriteButton/></a>
+      {
+        gameArr.map(e => (
+          <button onClick={() => gameChosen(e.id)} key={e.id}>
+            {e.title}
+// >>>>>>> main
           </button>
        // ))
      // }
     </div>
 
   */
-
-  // if(gameChoose) {
-
-  // }
 
 }
 
