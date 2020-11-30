@@ -84,8 +84,9 @@ export function Register() {
     return<Redirect push to="/login" />
   }
   return (
+    <main>
+      <Navbar/>
       <section className="form">
-        <Navbar/>
         <form onSubmit={handleSubmit}>
         <div className="form__grid">
 
@@ -146,6 +147,7 @@ export function Register() {
         </form>
 
       </section>
+    </main>
   )
 }
 

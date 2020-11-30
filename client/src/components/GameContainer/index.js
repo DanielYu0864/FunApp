@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import './style.css';
+import './style.scss';
 
 function GameContainer({game, backToOptions}) {
   //* state
@@ -16,6 +16,25 @@ function GameContainer({game, backToOptions}) {
   }
   //* render game
   return (
+// <<<<<<< Faranak-views
+//   <section className="game">
+//     <div className="game__container">
+//       <h2 className="game__title">{gameObj.title}</h2>
+//       <iframe
+//         className='game__display'
+//         title={gameObj.title}
+//         // width={gameObj.width}
+//         // height={gameObj.height}
+//         src={gameObj.imbedLink}
+//         scrolling={gameObj.scrolling}
+//       />
+//       <div className="game__buttons">
+//         <button className="game__button">Save</button>
+//         <button className="game__button" onClick={backToOptions}>Back</button>
+//       </div>
+//     </div>
+//   </section>
+// =======
   <div>
     <h2>Title: <span>{gameObj.title}</span></h2>
     <iframe
@@ -31,6 +50,7 @@ function GameContainer({game, backToOptions}) {
     <button>Save</button>
     <button onClick={backToOptions}>Back</button>
   </div>
+// >>>>>>> main
   )
 }
 

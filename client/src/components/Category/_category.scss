@@ -29,6 +29,10 @@
     background-image: url("monkeys.jpg");
   }
 
+  &.games {
+    background-color: rgba(246, 191, 90, 0.904);
+  }
+
   &__container {
     align-self: center;
 
@@ -47,6 +51,10 @@
       margin-bottom: 5rem;
       align-self: flex-end;
     }
+  }
+
+  &.games &__container {
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   }
 
   &__btn {

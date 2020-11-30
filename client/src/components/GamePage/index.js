@@ -1,6 +1,12 @@
 import React, {useState, useEffect}from 'react'
 import GameContainer from '../GameContainer';
+// <<<<<<< Faranak-views
+import Button from '../Category/Button';
+import Navbar from '../Navbar/Navbar';
+
+// =======
 import FavoriteButton from '../FavoriteButton';
+// >>>>>>> main
 function GamePage({gameList}) {
   // console.log(gameList)
   //* set state
@@ -53,18 +59,44 @@ function GamePage({gameList}) {
   }
   //* else render button
   return (
-    <div>
+
+    <main>
+        <Navbar color="white" />
+        <section className="category games">
+            <div className="category__container">
+                {
+                  gameArr.map(e => (
+                    <Button onClick={() => gameChosen(e.id)} key={e.id}>{e.title}</Button>
+                  ))
+                }
+            </div>
+        </section>
+    </main>
+
+  )
+
+
+  /*
+  <div>
       <h2>Game List</h2>
+// <<<<<<< Faranak-views
+      //{
+       // gameArr.map(e => (
+          //<button onClick={() => gameChosen(e.id)} key={e.id}>
+           // {e.title}
+// =======
       <a href='/favorite'><FavoriteButton/></a>
       {
         gameArr.map(e => (
           <button onClick={() => gameChosen(e.id)} key={e.id}>
             {e.title}
+// >>>>>>> main
           </button>
-        ))
-      }
+       // ))
+     // }
     </div>
-  )
+
+  */
 
 }
 
