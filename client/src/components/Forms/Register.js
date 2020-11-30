@@ -147,11 +147,7 @@ export function Register() {
         </form>
 
       </section>
-<<<<<<< HEAD
-      </main>
-=======
     </main>
->>>>>>> main
   )
 }
 
