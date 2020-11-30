@@ -50,11 +50,6 @@ export default class AgePicker extends React.Component {
 
     return (
       <Category css="age-picker" navbarColor="pink">
-// <<<<<<< Faranak-views
-//         <a href='/category'><Button color="#63b3ed">Ages 0 - 3</Button></a>
-//         <a href='/media'><Button color="#ecc94b">Ages 4 - 8</Button></a>
-//         <a href='/media'><Button color="#3da81c">Ages 9 - 12</Button></a>
-// =======
         <Link to={{ pathname: '/category', state: { age: '0-3'} }}>
           <Button color="#ecc94b">Ages 0 - 3</Button>
         </Link>
@@ -65,7 +60,6 @@ export default class AgePicker extends React.Component {
           <Button color="rgb(34, 117, 9)">Ages 9 - 12</Button>
         </Link>
         <a href='/favorite'><FavoriteButton/></a>
-// >>>>>>> main
       </Category>
     )
 
