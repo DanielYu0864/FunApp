@@ -85,9 +85,8 @@ export function Register() {
   }
   return (
     <main>
-      <Navbar color="purple" />
+      <Navbar/>
       <section className="form">
-
         <form onSubmit={handleSubmit}>
         <div className="form__grid">
 
@@ -127,9 +126,11 @@ export function Register() {
               value={password2}
               handleInputChange={handleInputChange}
             />
-              <Button color="purple">Create Account</Button>
-              <p class="form__alt-link"><a href='/login'>Go Back to Login</a></p>
-            
+
+            <Button color="purple">Create Account</Button>
+            <a href='/login'>
+              Go Back to Login
+            </a>
 
 
           </div>
@@ -146,7 +147,11 @@ export function Register() {
         </form>
 
       </section>
+<<<<<<< HEAD
       </main>
+=======
+    </main>
+>>>>>>> main
   )
 }
 

@@ -57,7 +57,7 @@ function Login() {
   }
   return (
     <main>
-      <Navbar color="purple" />
+      <Navbar color="purple"/>
       <section className="form bg-green">
           <form onSubmit={handleSubmit}>
             <div className="form__grid">
@@ -100,7 +100,7 @@ function Login() {
             </form>
 
         </section>
-        </main>
+      </main>
   )
 }
 
