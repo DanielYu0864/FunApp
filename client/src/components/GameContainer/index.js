@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import './style.css';
 
 function GameContainer({game, backToOptions}) {
   //* state
@@ -20,8 +21,8 @@ function GameContainer({game, backToOptions}) {
     <iframe
       className='display'
       title={gameObj.title}
-      width={gameObj.width}
-      height={gameObj.height}
+      // width={gameObj.width}
+      // height={gameObj.height}
       src={gameObj.imbedLink}
       scrolling={gameObj.scrolling}
       sandbox='allow-forms allow-scripts allow-modals allow-orientation-lock allow-pointer-lock allow-presentation allow-same-origin allow-top-navigation allow-top-navigation-by-user-activation allow-popups-to-escape-sandbox'

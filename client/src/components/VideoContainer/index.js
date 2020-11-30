@@ -22,7 +22,7 @@ function VideoContainer({video, backToOptions}) {
       width={videoObj.width}
       height={videoObj.height}
       src={videoObj.imbedLink}
-      frameborder="0"
+      frameBorder="0"
       allow="
         accelerometer;
         autoplay;
@@ -30,7 +30,7 @@ function VideoContainer({video, backToOptions}) {
         encrypted-media;
         gyroscope;
         picture-in-picture"
-      allowfullscreen
+        allowFullScreen
       sandbox='allow-forms allow-scripts allow-modals allow-orientation-lock allow-pointer-lock allow-presentation allow-same-origin allow-top-navigation allow-top-navigation-by-user-activation allow-popups-to-escape-sandbox'
     />
     {/* <iframe
