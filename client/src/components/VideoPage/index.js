@@ -31,7 +31,8 @@ function VideoPage({videoList}) {
   }
   //* change video state to the video data when button click
   const videoChosen = async (id) => {
-    await setVideo(videoArr[id - 1]);
+    let videoInfo = videoArr.filter(e => e.id === id);
+    await setVideo(videoInfo[0]);
     await setVideoChoose(true);
   };
   //* back to the video choose page
@@ -40,6 +41,7 @@ function VideoPage({videoList}) {
   }
   //* check loading
   if(loading === true) {
+    console.log('loading from video page')
     return <h1>Loading ...</h1>
   }
   //* check video chose

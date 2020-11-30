@@ -31,7 +31,9 @@ function GamePage({gameList}) {
   }
   //* change game state to the game data when button click
   const gameChosen = async (id) => {
-    await setGame(gameArr[id - 1]);
+    let gameInfo = gameArr.filter(e => e.id === id);
+    // console.log(gameInfo);
+    await setGame(gameInfo[0]);
     await setGameChoose(true);
   };
   //* back to the game choose page

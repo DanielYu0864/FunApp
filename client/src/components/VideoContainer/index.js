@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from 'react'
 
 function VideoContainer({video, backToOptions}) {
+  console.log(video);
   //* state
   const [videoObj, setVideoObj] = useState();
   const [loading, setLoading] = useState(true);
   //* set state
   useEffect(async () => {
     await setVideoObj(video);
+    // console.log(videoObj);
     await setLoading(false);
   });
   //* check loading
   if(loading||!videoObj) {
+    console.log('loading from video container')
     return <h1>loading</h1>
   }
   //* render video
@@ -33,20 +36,6 @@ function VideoContainer({video, backToOptions}) {
         allowFullScreen
       sandbox='allow-forms allow-scripts allow-modals allow-orientation-lock allow-pointer-lock allow-presentation allow-same-origin allow-top-navigation allow-top-navigation-by-user-activation allow-popups-to-escape-sandbox'
     />
-    {/* <iframe
-      width="560"
-      height="315"
-      src="https://www.youtube.com/embed/0LDArAJf7-c"
-      frameborder="0"
-      allow="
-        accelerometer;
-        autoplay;
-        clipboard-write;
-        encrypted-media;
-        gyroscope;
-        picture-in-picture"
-      allowfullscreen
-    /> */}
     <button>Save</button>
     <button onClick={backToOptions}>Back</button>
   </div>
