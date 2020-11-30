@@ -1,6 +1,6 @@
 import React, {useState, useEffect}from 'react'
 import GameContainer from '../GameContainer';
-
+import FavoriteButton from '../FavoriteButton';
 function GamePage({gameList}) {
   // console.log(gameList)
   //* set state
@@ -53,6 +53,7 @@ function GamePage({gameList}) {
   return (
     <div>
       <h2>Game List</h2>
+      <a href='/favorite'><FavoriteButton/></a>
       {
         gameArr.map(e => (
           <button onClick={() => gameChosen(e.id)} key={e.id}>
@@ -62,10 +63,6 @@ function GamePage({gameList}) {
       }
     </div>
   )
-
-  // if(gameChoose) {
-
-  // }
 
 }
 
