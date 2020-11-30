@@ -10,6 +10,7 @@ function VideoChoosePage() {
   const changeState = (videoList) => {
     let ageFilter = filterAge(videoList, age)
     setVideoList([...ageFilter]);
+    console.log('ageFilter', ageFilter);
     setLoading(false);
   };
   //* function for filter the video list by user age
