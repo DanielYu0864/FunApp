@@ -55,7 +55,7 @@ function GamePage({gameList}) {
   return (
 
     <main>
-        <Navbar color="dark" />
+        <Navbar color="white" />
         <section className="category games">
             <div className="category__container">
                 {
