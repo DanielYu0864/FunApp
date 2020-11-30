@@ -1,5 +1,7 @@
 import React, {useState, useEffect}from 'react'
 import GameContainer from '../GameContainer';
+import Button from '../Category/Button';
+import Navbar from '../Navbar/Navbar';
 
 function GamePage({gameList}) {
   // console.log(gameList)
@@ -51,17 +53,36 @@ function GamePage({gameList}) {
   }
   //* else render button
   return (
-    <div>
-      <h2>Game List</h2>
-      {
-        gameArr.map(e => (
-          <button onClick={() => gameChosen(e.id)} key={e.id}>
-            {e.title}
-          </button>
-        ))
-      }
-    </div>
+
+    <main>
+        <Navbar color="dark" />
+        <section className="category games">
+            <div className="category__container">
+                {
+                  gameArr.map(e => (
+                    <Button onClick={() => gameChosen(e.id)} key={e.id}>{e.title}</Button>
+                  ))
+                }
+            </div>
+        </section>
+    </main>
+
   )
+
+
+  /*
+  <div>
+      <h2>Game List</h2>
+      //{
+       // gameArr.map(e => (
+          //<button onClick={() => gameChosen(e.id)} key={e.id}>
+           // {e.title}
+          </button>
+       // ))
+     // }
+    </div>
+
+  */
 
   // if(gameChoose) {
 

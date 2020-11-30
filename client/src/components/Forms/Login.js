@@ -56,8 +56,9 @@ function Login() {
     return <Redirect push to="/age" />
   }
   return (
+    <main>
+      <Navbar color="purple"/>
       <section className="form bg-green">
-          <Navbar/>
           <form onSubmit={handleSubmit}>
             <div className="form__grid">
 
@@ -99,6 +100,7 @@ function Login() {
             </form>
 
         </section>
+      </main>
   )
 }
 
