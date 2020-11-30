@@ -84,6 +84,8 @@ export function Register() {
     return<Redirect push to="/login" />
   }
   return (
+    <main>
+      <Navbar color="purple" />
       <section className="form">
 
         <form onSubmit={handleSubmit}>
@@ -126,9 +128,8 @@ export function Register() {
               handleInputChange={handleInputChange}
             />
               <Button color="purple">Create Account</Button>
-            <a href='/login'>
-              Go Back to Login
-            </a>
+              <p class="form__alt-link"><a href='/login'>Go Back to Login</a></p>
+            
 
 
           </div>
@@ -145,6 +146,7 @@ export function Register() {
         </form>
 
       </section>
+      </main>
   )
 }
 
