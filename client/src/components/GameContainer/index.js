@@ -24,6 +24,8 @@ function GameContainer({game, backToOptions}) {
       height={gameObj.height}
       src={gameObj.imbedLink}
       scrolling={gameObj.scrolling}
+      sandbox='allow-forms allow-scripts allow-modals allow-orientation-lock allow-pointer-lock allow-presentation allow-same-origin allow-top-navigation allow-top-navigation-by-user-activation allow-popups-to-escape-sandbox'
+
     />
     <button>Save</button>
     <button onClick={backToOptions}>Back</button>

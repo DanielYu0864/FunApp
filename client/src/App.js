@@ -10,6 +10,8 @@ import MediaPicker from './components/Category/MediaPicker';
 import Navbar from './components/Navbar/Navbar';
 import flash from 'express-flash';
 import GameChoosePage from './pages/GameChoosePage';
+import VideoChoosePage from './pages/VideoChoosePage';
+import FavoritePage from './pages/FavoritePage';
 // import Login from './Login/Login';
 
 
@@ -54,6 +56,12 @@ export default class App extends React.Component {
             </Route>
             <Route exact path='/game'>
               <GameChoosePage/>
+            </Route>
+            <Route exact path='/video'>
+              <VideoChoosePage/>
+            </Route>
+            <Route exact path='/favorite'>
+              <FavoritePage/>
             </Route>
             <Route exact path='/'>
               <Start/>
