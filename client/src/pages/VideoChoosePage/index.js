@@ -4,7 +4,7 @@ import VideoPage from '../../components/VideoPage';
 import { useLocation } from 'react-router-dom';
 function VideoChoosePage() {
   const location = useLocation();
-  const { age } = location.state;
+  const { age, user_id } = location.state;
   const [videoList, setVideoList] = useState([]);
   const [loading, setLoading] = useState(true);
   const changeState = (videoList) => {
@@ -33,7 +33,7 @@ function VideoChoosePage() {
   }
   return (
     <div>
-      <VideoPage videoList={videoList}/>
+      <VideoPage videoList={videoList} user_id={user_id}/>
     </div>
   )
 }

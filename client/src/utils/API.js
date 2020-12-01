@@ -2,10 +2,13 @@
 import axios from 'axios';
 
 export default {
-  register: (info) => {
-    return axios.post('/user/register', info);
+  register: (userInfo) => {
+    return axios.post('/user/register', userInfo);
   },
-  login: (info) => {
-    return axios.post('/user/login', info);
+  login: (userInfo) => {
+    return axios.post('/user/login', userInfo);
+  },
+  save: (gameInfo, _id) => {
+    return axios.post(`/api/favorite/save/${_id}`, gameInfo);
   }
 }

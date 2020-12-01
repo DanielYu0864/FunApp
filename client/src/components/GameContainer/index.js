@@ -1,14 +1,41 @@
+import { set } from 'mongoose';
 import React, { useState, useEffect } from 'react'
+import API from '../../utils/API'
 import './style.scss';
 
-function GameContainer({game, backToOptions}) {
+function GameContainer({game, backToOptions, user_id}) {
   //* state
+  const [userId, setUserId] = useState();
   const [gameObj, setGameObj] = useState();
   const [loading, setLoading] = useState(true);
+  const saveGame = event => {
+    event.preventDefault();
+    console.log('User ID: ' + userId);
+    let gameObject = {
+      age: gameObj.age,
+      type: gameObj.type,
+      title: gameObj.title,
+      imbedLink: gameObj.imbedLink,
+      width: gameObj.width,
+      height: gameObj.height,
+      scrolling: gameObj.scrolling
+    };
+    // console.log('Game Object:', {age: gameObj.age, title: gameObj.title, imbedLink: gameObj.imbedLink, width: gameObj.width, height: gameObj.height, scrolling: gameObj.scrolling});
+    console.log(gameObject);
+    API.save(gameObject, userId)
+      .then(e => {
+        console.log(e);
+      })
+      .catch(err => {
+        console.error(err);
+      })
+  }
   //* set state
   useEffect(() => {
+    setUserId(user_id);
     setGameObj(game);
     setLoading(false);
+    console.log('From Game Container: ', userId);
   });
   //* check loading
   if(loading||!gameObj) {
@@ -31,7 +58,7 @@ function GameContainer({game, backToOptions}) {
         sandbox='allow-forms allow-scripts allow-modals allow-orientation-lock allow-pointer-lock allow-presentation allow-same-origin allow-top-navigation allow-top-navigation-by-user-activation allow-popups-to-escape-sandbox'
       />
       <div className="game__buttons">
-        <button className="game__button">Save</button>
+        <button className="game__button" onClick={saveGame}>Save</button>
         <button className="game__button" onClick={backToOptions}>Back</button>
       </div>
     </div>

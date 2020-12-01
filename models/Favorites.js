@@ -6,7 +6,7 @@ const FavoriteSchema = new Schema({
   'type': String,
   'title': String,
   'imbedLind': String,
-  'wideth': String,
+  'width': String,
   'height': String,
   'scrolling': String
 });
