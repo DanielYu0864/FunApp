@@ -1,4 +1,5 @@
 const db = require('../models');
+const { findByIdAndUpdate } = require('../models/User');
 
 module.exports = (app) => {
   //! API for age
@@ -111,4 +112,38 @@ module.exports = (app) => {
       res.status(400).json(err);
     });
   });
+  //? API call for save data to favorite list
+  app.post('/api/favorite/save/:id', async ({ body, params }, res) => {
+    await db.Favorites.create(body)
+      .then(({ _id }) => db.User.findByIdAndUpdate(params.id, { $push: { favorites: _id } }, { new: true }))
+      // .then(({ _id }) => db.User.findOneAndUpdate({}, { $push: { favorites: _id } }, { new: true }))
+      .then(dbUser => {
+        console.log(dbUser);
+        res.status(200).json(dbUser);
+      })
+      .catch(err => {
+        console.error(err);
+        res.status(400).json(err);
+      })
+  })
+  //? API call for get data from favorite list
+  app.get('/api/favorite/user/:id', async({ body, params }, res) => {
+    await db.User.findById(params.id)
+      .then(dbUser => {
+        return  dbUser.favorites
+      })
+      .then(_id => {
+        db.Favorites.find({_id:{$in:[..._id]}})
+          .then(data => {
+            console.log(data);
+            res.status(200).json(data);
+          })
+          .catch(err => {
+            res.status(400).json(err);
+          })
+      })
+      .catch(err => {
+        res.status(400).json(err);
+      })
+  })
 }

@@ -6,10 +6,10 @@ function VideoContainer({video, backToOptions}) {
   const [videoObj, setVideoObj] = useState();
   const [loading, setLoading] = useState(true);
   //* set state
-  useEffect(async () => {
-    await setVideoObj(video);
+  useEffect(() => {
+    setVideoObj(video);
     // console.log(videoObj);
-    await setLoading(false);
+    setLoading(false);
   });
   //* check loading
   if(loading||!videoObj) {
@@ -21,6 +21,7 @@ function VideoContainer({video, backToOptions}) {
   <div>
     <h2>Title: <span>{videoObj.title}</span></h2>
     <iframe
+      title={videoObj.title}
       className='display'
       width={videoObj.width}
       height={videoObj.height}
