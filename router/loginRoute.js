@@ -82,7 +82,7 @@ module.exports = (app) => {
         } else {
           if(userInfo.password === password) {
             console.log(true)
-            res.json('logined');
+            res.json('logged in');
           } else {
             console.log('password is not correct')
             res.json('password is not correct')
