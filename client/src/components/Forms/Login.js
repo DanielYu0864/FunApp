@@ -36,8 +36,8 @@ function Login() {
       })
       .then(e => {
         console.log(e)
-        if(e.data === 'logined') {
-          alert('Logined!')
+        if(e.data === 'logged in') {
+          alert('Logged in!')
           setIsLogin(true)
         } else {
           alert(e.data)

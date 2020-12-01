@@ -16,7 +16,7 @@ function MediaPicker() {
       <Link to={{ pathname: '/video', state: { age: age } }}>
         <Button color="#63b3ed">Videos</Button>
       </Link>
-      <Button color="#f56565">Books</Button>
+      {/* <Button color="#f56565">Books</Button> */}
       <a href='/favorite'><FavoriteButton/></a>
     </Category>
   )
