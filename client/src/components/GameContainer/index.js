@@ -6,9 +6,9 @@ function GameContainer({game, backToOptions}) {
   const [gameObj, setGameObj] = useState();
   const [loading, setLoading] = useState(true);
   //* set state
-  useEffect(async () => {
-    await setGameObj(game);
-    await setLoading(false);
+  useEffect(() => {
+    setGameObj(game);
+    setLoading(false);
   });
   //* check loading
   if(loading||!gameObj) {
@@ -21,6 +21,7 @@ function GameContainer({game, backToOptions}) {
     <div className="game__container">
       <h2 className="game__title">{gameObj.title}</h2>
       <iframe
+        title={gameObj.title}
         className='game__display'
         title={gameObj.title}
         // width={gameObj.width}
