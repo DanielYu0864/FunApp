@@ -6,7 +6,7 @@ import { useLocation } from 'react-router-dom';
 
 function GameChoosePage() {
   const location = useLocation();
-  const { age } = location.state;
+  const { age } = location.state ?? 5;
   const [gameList, setGameList] = useState([]);
   const [loading, setLoading] = useState(true);
   const changeState = (gameList) => {
