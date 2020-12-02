@@ -40,7 +40,7 @@ function CategoryPage() {
       <CategoryContainer videoList={videoList} user_id={user_id}/>
       Category Page
       <Link to={{ pathname:'/category', state:{user_id: user_id} }}>
-        <Button>Back</Button>
+        <button>Back to Category</button>
       </Link>
     </div>
   )

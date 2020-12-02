@@ -65,7 +65,7 @@ function VideoContainer({video, backToOptions, user_id}) {
         sandbox='allow-forms allow-scripts allow-modals allow-orientation-lock allow-pointer-lock allow-presentation allow-same-origin allow-top-navigation allow-top-navigation-by-user-activation allow-popups-to-escape-sandbox'
       />
       <div className="media__buttons">
-        <button className="media__button">Save</button>
+        <button className="media__button" onClick={saveVideo}>Save</button>
         <button className="media__button" onClick={backToOptions}>Back</button>
       </div>
     </div>
