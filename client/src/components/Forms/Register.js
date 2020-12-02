@@ -128,9 +128,7 @@ export function Register() {
             />
 
             <Button color="purple">Create Account</Button>
-            <a href='/login'>
-              Go Back to Login
-            </a>
+            <p className="form__alt-link"><a href='/login'>Go Back to Login</a></p>
 
 
           </div>

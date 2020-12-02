@@ -1,6 +1,9 @@
 import React, {useState, useEffect}from 'react';
 import VideoContainer from '../VideoContainer';
 import FavoriteButton from '../FavoriteButton';
+import Button from '../Category/Button';
+import Navbar from '../Navbar/Navbar';
+
 function VideoPage({videoList, user_id}) {
   // console.log(videoList)
   //* set state
@@ -57,18 +60,33 @@ function VideoPage({videoList, user_id}) {
   }
   //* else render button
   return (
-    <div>
-      <h2>video List</h2>
-      {
-        videoArr.map(e => (
-          <button onClick={() => videoChosen(e.id)} key={e.id}>
-            {e.title}
-          </button>
-        ))
-      }
-    </div>
+    <main>
+        <Navbar color="white" />
+        <section className="category videos">
+          <h2 className="category__title">Videos</h2>
+            <div className="category__container">
+                {
+                  videoArr.map(e => (
+                    <Button border="#fff" color="cornflowerblue" onClick={() => videoChosen(e.id)} key={e.id}>{e.title}</Button>
+                  ))
+                }
+            </div>
+        </section>
+    </main>
   )
 
 }
+
+  //  <div>
+  //    <h2>video List</h2>
+  //    <a href='/favorite'><FavoriteButton/></a>
+  //    {
+  //      videoArr.map(e => (
+  //        <button onClick={() => videoChosen(e.id)} key={e.id}>
+  //          {e.title}
+  //        </button>
+  //      ))
+  //    }
+  //  </div>
 
 export default VideoPage

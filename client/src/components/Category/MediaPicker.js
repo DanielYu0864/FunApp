@@ -20,7 +20,7 @@ function MediaPicker() {
         <button>Back to Age Picker</button>
       </Link>
       <Link to={{ pathname: '/favorite', state: { user_id: user_id } }}>
-        <FavoriteButton/>
+        <FavoriteButton color="#333"/>
       </Link>
     </Category>
   )

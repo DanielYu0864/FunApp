@@ -3,7 +3,6 @@ import { useLocation, Link } from 'react-router-dom';
 import API from '../../utils/API';
 import FavoriteContainer from '../../components/FavoriteContainer'
 function FavoritePage() {
-  const commit;
   //* useLoation to get the value form state
   const location = useLocation();
   const { user_id } = location.state;
