@@ -11,13 +11,10 @@ import Navbar from './components/Navbar/Navbar';
 import GameChoosePage from './pages/GameChoosePage';
 import VideoChoosePage from './pages/VideoChoosePage';
 import FavoritePage from './pages/FavoritePage';
-import UserContext from './utils/UserContext';
+import CategoryPage from './components/CategoryPage';
 
-// export const UserContext = createContext({});
 
 function App() {
-  const [userId, setUserId] = useState({});
-  // const user = 'Yu'
   return (
     <main>
       <Router>
@@ -31,12 +28,9 @@ function App() {
           <Route exact path='/age'>
             <AgePicker/>
           </Route>
-          {/* <UserContext.Provider value={{user}}> */}
             <Route exact path='/login'>
               <Login/>
             </Route>
-          {/* </UserContext.Provider> */}
-
           <Route exact path='/register'>
             <Register/>
           </Route>
@@ -48,6 +42,9 @@ function App() {
           </Route>
           <Route exact path='/favorite'>
             <FavoritePage/>
+          </Route>
+          <Route exact path='/categorypage'>
+            <CategoryPage/>
           </Route>
           <Route exact path='/'>
             <Start/>
@@ -62,74 +59,3 @@ function App() {
 }
 
 export default App;
-
-
-// export default class App extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       isLogin: false,
-//       age: ''
-//     }
-//     console.log(this.state.age);
-//   }
-
-//   // afterLogin = () => {
-//   //   this.setState({
-//   //     isLogin: true
-//   //   })
-//   // }
-//   checkAge = (age) => {
-//     this.setState({
-//       age: age
-//     });
-//   }
-
-//   render() {
-//     return (
-//       <main>
-//         <Router>
-//           <Switch>
-//             <Route exact path='/category'>
-//               <CategoryPicker age='0-3'/>
-//             </Route>
-//             <Route exact path='/media/48'>
-//               <MediaPicker age='4-8'/>
-//             </Route>
-//             <Route exact path='/media/912'>
-//               <MediaPicker age='9-12'/>
-//             </Route>
-//             <Route exact path='/age'>
-//               <AgePicker checkAge={this.checkAge} age={this.state.age}/>
-//             </Route>
-//             {/* <Route exact path="/login">
-//               {!this.isLogin ? <Redirect to="/login" /> : <Redirect to='/age'/>}
-//               <Login/>
-//             </Route> */}
-//             <Route exact path='/login'>
-//               <Login/>
-//             </Route>
-//             <Route exact path='/register'>
-//               <Register/>
-//             </Route>
-//             <Route exact path='/game'>
-//               <GameChoosePage/>
-//             </Route>
-//             <Route exact path='/video'>
-//               <VideoChoosePage/>
-//             </Route>
-//             <Route exact path='/favorite'>
-//               <FavoritePage/>
-//             </Route>
-//             <Route exact path='/'>
-//               <Start/>
-//             </Route>
-//           </Switch>
-//         </Router>
-
-
-
-//       </main>
-//     )
-//   }
-// }

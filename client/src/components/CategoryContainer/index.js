@@ -1,15 +1,16 @@
-import React, {useState, useEffect}from 'react';
-import VideoContainer from '../VideoContainer';
+import React, {useState, useEffect} from 'react'
 import Button from '../Category/Button';
 import Navbar from '../Navbar/Navbar';
-function VideoPage({videoList, user_id}) {
-  // console.log(videoList)
+import VideoContainer from '../VideoContainer'
+
+function CategoryContainer({videoList, user_id}) {
   //* set state
   const [userId, setUserId] = useState();
   const [loading, setLoading] = useState(true);
   const [videoArr, setVideoArr] = useState([]);
   const [video, setVideo] = useState({});
   const [videoChoose, setVideoChoose] = useState(false);
+
   //* re-render component everytime when state changed
   useEffect(() => {
     if(videoList !== []) {
@@ -19,12 +20,7 @@ function VideoPage({videoList, user_id}) {
   //* re-render component when video chose
   useEffect(() => {
     checkLoading();
-  }, [videoChoose]);
-  //* re-render component when video chose
-  useEffect(() => {
-    checkLoading();
-    // console.log('re-render')
-  }, [video])
+  }, [videoChoose, video]);
   //* make sure loading properly
   const checkLoading = async () => {
     await setVideoArr(videoList);
@@ -56,23 +52,22 @@ function VideoPage({videoList, user_id}) {
       backToOptions={backToOptions}
     />
   }
-  //* else render button
+
   return (
     <main>
-        <Navbar color="rgb(87, 110, 103)" />
-        <section className="category videos">
-          <h2 className="category__title alt">Videos</h2>
-            <div className="category__container">
-                {
-                  videoArr.map(e => (
-                    <Button border="#fff" color="cornflowerblue" onClick={() => videoChosen(e.id)} key={e.id}>{e.title}</Button>
-                  ))
-                }
-            </div>
-        </section>
+      <section>
+        <h2>Category Container</h2>
+        <div>
+          {
+            videoArr.map(e => (
+              <Button onClick={() => videoChosen(e.id)} key={e.id}>{e.title}</Button>
+            ))
+          }
+        </div>
+      </section>
+
     </main>
   )
-
 }
 
-export default VideoPage
+export default CategoryContainer;

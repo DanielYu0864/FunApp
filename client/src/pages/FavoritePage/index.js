@@ -69,7 +69,6 @@ function FavoritePage() {
   return (
     <div>
       <h1>Favorite List</h1>
-      <h2>user id: {userId}</h2>
       {
         favoriteList.map(e => (
           <button onClick={() => handleChoose(e._id)}>

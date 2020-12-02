@@ -8,9 +8,9 @@ const FavoriteButton = props => {
 
   return (
     props.color ?
-      <a className="favorite-button" style={buttonStyle} href={props.link}>Favorite</a>
+      <div className="favorite-button" style={buttonStyle} /*href={props.link}*/>Favorite</div>
       :
-      <a className="favorite-button" href={props.link}>Favorite</a>
+      <div className="favorite-button" /*href={props.link}*/>Favorite</div>
   )
 
 }
