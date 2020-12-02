@@ -16,12 +16,12 @@ function GameContainer({game, backToOptions}) {
   //* render game
   return (
 // <<<<<<< Faranak-views
-  <section className="game">
-    <div className="game__container">
-      <h2 className="game__title">{gameObj.title}</h2>
+  <section className="media">
+    <div className="media__container">
+      <h2 className="media__title">{gameObj.title}</h2>
       <iframe
         title={gameObj.title}
-        className='game__display'
+        className='media__display'
         title={gameObj.title}
         // width={gameObj.width}
         // height={gameObj.height}
@@ -29,9 +29,9 @@ function GameContainer({game, backToOptions}) {
         scrolling={gameObj.scrolling}
         sandbox='allow-forms allow-scripts allow-modals allow-orientation-lock allow-pointer-lock allow-presentation allow-same-origin allow-top-navigation allow-top-navigation-by-user-activation allow-popups-to-escape-sandbox'
       />
-      <div className="game__buttons">
-        <button className="game__button">Save</button>
-        <button className="game__button" onClick={backToOptions}>Back</button>
+      <div className="media__buttons">
+        <button className="media__button">Save</button>
+        <button className="media__button" onClick={backToOptions}>Back</button>
       </div>
     </div>
   </section>
