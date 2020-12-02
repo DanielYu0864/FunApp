@@ -63,10 +63,11 @@ function GamePage({gameList}) {
     <main>
         <Navbar color="white" />
         <section className="category games">
+          <h2 className="category__title">Games</h2>
             <div className="category__container">
                 {
                   gameArr.map(e => (
-                    <Button onClick={() => gameChosen(e.id)} key={e.id}>{e.title}</Button>
+                    <Button border="#fff" onClick={() => gameChosen(e.id)} key={e.id}>{e.title}</Button>
                   ))
                 }
             </div>

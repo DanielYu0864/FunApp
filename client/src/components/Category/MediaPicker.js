@@ -6,7 +6,7 @@ import { useLocation, Link } from 'react-router-dom';
 
 function MediaPicker() {
   const location = useLocation();
-  const {age} = location.state;
+  const {age} = location.state ?? 5;
   // console.log(age)
   return (
     <Category css="media-picker" align="bottom" navbarColor="red">
@@ -16,8 +16,7 @@ function MediaPicker() {
       <Link to={{ pathname: '/video', state: { age: age } }}>
         <Button color="#63b3ed">Videos</Button>
       </Link>
-      {/* <Button color="#f56565">Books</Button> */}
-      <a href='/favorite'><FavoriteButton/></a>
+      <FavoriteButton color="#333" link="/favorite"/>
     </Category>
   )
 }
