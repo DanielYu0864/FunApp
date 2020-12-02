@@ -1,15 +1,14 @@
 import React, {useState, useEffect}from 'react'
 import GameContainer from '../GameContainer';
-// <<<<<<< Faranak-views
 import Button from '../Category/Button';
 import Navbar from '../Navbar/Navbar';
 
-// =======
 import FavoriteButton from '../FavoriteButton';
-// >>>>>>> main
-function GamePage({gameList}) {
+
+function GamePage({gameList, user_id}) {
   // console.log(gameList)
   //* set state
+  const [userId, setUserId] = useState();
   const [loading, setLoading] = useState(true);
   const [gameArr, setGameArr] = useState([]);
   const [game, setGame] = useState({});
@@ -23,17 +22,14 @@ function GamePage({gameList}) {
   //* re-render component when game chose
   useEffect(() => {
     checkLoading();
-  }, [gameChoose]);
-  //* re-render component when game chose
-  useEffect(() => {
-    checkLoading();
-    // console.log('re-render')
-  }, [game])
+  }, [gameChoose, game]);
   //* make sure loading properly
   const checkLoading = async () => {
     await setGameArr(gameList);
+    await setUserId(user_id);
     await setLoading(false);
-    // console.log(gameArr)
+    // console.log(gameArr);
+    console.log('From Game Page: ', userId);
   }
   //* change game state to the game data when button click
   const gameChosen = async (id) => {
@@ -53,6 +49,7 @@ function GamePage({gameList}) {
   //* check game chose
   if(gameChoose) {
     return <GameContainer
+      user_id={userId}
       game={game}
       backToOptions={backToOptions}
     />

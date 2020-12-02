@@ -1,4 +1,4 @@
-import React, { useState, createContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 // IMPORT COMPONENTS
 import Register from './components/Forms/Register';
@@ -11,11 +11,13 @@ import Navbar from './components/Navbar/Navbar';
 import GameChoosePage from './pages/GameChoosePage';
 import VideoChoosePage from './pages/VideoChoosePage';
 import FavoritePage from './pages/FavoritePage';
+import UserContext from './utils/UserContext';
 
-// const AgeContext = createContext(null);
+// export const UserContext = createContext({});
 
 function App() {
-
+  const [userId, setUserId] = useState({});
+  // const user = 'Yu'
   return (
     <main>
       <Router>
@@ -29,9 +31,12 @@ function App() {
           <Route exact path='/age'>
             <AgePicker/>
           </Route>
-          <Route exact path='/login'>
-            <Login/>
-          </Route>
+          {/* <UserContext.Provider value={{user}}> */}
+            <Route exact path='/login'>
+              <Login/>
+            </Route>
+          {/* </UserContext.Provider> */}
+
           <Route exact path='/register'>
             <Register/>
           </Route>

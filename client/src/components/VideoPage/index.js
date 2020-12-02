@@ -1,13 +1,13 @@
 import React, {useState, useEffect}from 'react';
 import VideoContainer from '../VideoContainer';
 import FavoriteButton from '../FavoriteButton';
-
 import Button from '../Category/Button';
 import Navbar from '../Navbar/Navbar';
 
-function VideoPage({videoList}) {
+function VideoPage({videoList, user_id}) {
   // console.log(videoList)
   //* set state
+  const [userId, setUserId] = useState();
   const [loading, setLoading] = useState(true);
   const [videoArr, setVideoArr] = useState([]);
   const [video, setVideo] = useState({});
@@ -30,6 +30,7 @@ function VideoPage({videoList}) {
   //* make sure loading properly
   const checkLoading = async () => {
     await setVideoArr(videoList);
+    await setUserId(user_id);
     await setLoading(false);
     // console.log(videoArr)
   }
@@ -39,6 +40,7 @@ function VideoPage({videoList}) {
     await setVideo(videoInfo[0]);
     await setVideoChoose(true);
   };
+
   //* back to the video choose page
   const backToOptions = async () => {
     await setVideoChoose(false);
@@ -52,6 +54,7 @@ function VideoPage({videoList}) {
   if(videoChoose) {
     return <VideoContainer
       video={video}
+      user_id={userId}
       backToOptions={backToOptions}
     />
   }

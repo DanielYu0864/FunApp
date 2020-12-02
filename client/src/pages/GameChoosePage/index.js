@@ -1,12 +1,13 @@
-import flash from 'express-flash';
 import React, { useState, useEffect } from 'react'
 import GamePage from '../../components/GamePage';
 import gamesJSON from '../../utils/games.json';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
+import FavoriteButton from '../../components/FavoriteButton';
 
 function GameChoosePage() {
   const location = useLocation();
-  const { age } = location.state ?? 5;
+  const { age, user_id } = location.state;
+  // console.log('From GameChoosePage ',age, user_id)
   const [gameList, setGameList] = useState([]);
   const [loading, setLoading] = useState(true);
   const changeState = (gameList) => {
@@ -34,7 +35,13 @@ function GameChoosePage() {
   }
   return (
     <div>
-      <GamePage gameList={gameList}/>
+      <GamePage gameList={gameList} user_id={user_id}/>
+      <Link to={{ pathname: '/media', state: { age: age, user_id: user_id } }}>
+        <button>Back to media</button>
+      </Link>
+      <Link to={{ pathname: '/favorite', state: { user_id: user_id } }}>
+        <FavoriteButton/>
+      </Link>
     </div>
   )
 }
