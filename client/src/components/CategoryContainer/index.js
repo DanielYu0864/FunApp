@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import Button from '../Category/Button';
 import Navbar from '../Navbar/Navbar';
-import VideoContainer from '../VideoContainer'
+import VideoContainer from '../VideoContainer';
 
 function CategoryContainer({videoList, user_id}) {
   //* set state
@@ -64,6 +64,7 @@ function CategoryContainer({videoList, user_id}) {
             ))
           }
         </div>
+
       </section>
 
     </main>
