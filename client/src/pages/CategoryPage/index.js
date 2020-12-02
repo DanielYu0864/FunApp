@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
-import CategoryContainer from '../CategoryContainer'
+import CategoryContainer from '../../components/CategoryContainer'
 import { useLocation, Link } from 'react-router-dom';
-import Button from '../Category/Button';
+import Button from '../../components/Category/Button';
 import videoJSON from '../../utils/videos.json';
 function CategoryPage() {
   const location = useLocation();
