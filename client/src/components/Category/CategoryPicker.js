@@ -6,13 +6,13 @@ import FavoriteButton from '../FavoriteButton';
 
 function CategoryPicker(props) {
   const location = useLocation();
-  const {age} = location.state;
+  const {age} = location.state ?? 5;
   return (
     <Category css="category-picker" align="top" navbarColor="white">
       <Button color="#ecc94b">Animals</Button>
       <Button color="#63b3ed">Education</Button>
       <Button color="#e53e3e">Food</Button>
-      <a href='/favorite'><FavoriteButton/></a>
+      <FavoriteButton color="#333" link="/favorite"/>
     </Category>
   )
 }

@@ -1,11 +1,18 @@
 import React from 'react'
 
-function FavoriteButton() {
+const FavoriteButton = props => {
+
+  const buttonStyle = {
+    backgroundColor: props.color
+  }
+
   return (
-    <button>
-      Favortie
-    </button>
+    props.color ?
+      <div className="favorite-button" style={buttonStyle} /*href={props.link}*/>Favorite</div>
+      :
+      <div className="favorite-button" /*href={props.link}*/>Favorite</div>
   )
+
 }
 
 export default FavoriteButton

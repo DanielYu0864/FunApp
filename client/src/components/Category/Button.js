@@ -1,15 +1,13 @@
 const Button = props => {
 
-  const buttonStyle = {
-    backgroundColor: props.color
-  }
+  const buttonStyle = {};
 
-  return (
-    props.color ?
-      <button className="category__btn" style={buttonStyle}>{props.children}</button>
-      :
-      <button className="category__btn" onClick={props.onClick}>{props.children}</button>
-  )
+  if (props.color) buttonStyle.backgroundColor = props.color;
+  if (props.border) buttonStyle.borderColor = props.border;
+
+  const cssClass = `category__btn${props.border ? ' with-border' : ''}`
+
+  return <button className={cssClass} onClick={props.onClick} style={buttonStyle}>{props.children}</button>
 
 }
 

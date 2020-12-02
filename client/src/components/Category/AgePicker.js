@@ -22,7 +22,7 @@ function AgePicker() {
         <Button color="rgb(34, 117, 9)">Ages 9 - 12</Button>
       </Link>
       <Link to={{ pathname: '/favorite', state: { user_id: user_id } }}>
-        <FavoriteButton/>
+        <FavoriteButton color='#333'/>
       </Link>
     </Category>
   )
@@ -44,6 +44,7 @@ export default AgePicker
 
 //   render() {
 
+// <<<<<<< HEAD
 //     return (
 //       <Category css="age-picker" navbarColor="pink">
 //         <Link to={{ pathname: '/category', state: { age: '0-3'} }}>
@@ -58,6 +59,22 @@ export default AgePicker
 //         <a href='/favorite'><FavoriteButton/></a>
 //       </Category>
 //     )
+// =======
+//     return (
+//       <Category css="age-picker" align="top" navbarColor="pink">
+//         <Link to={{ pathname: '/category', state: { age: '0-3'} }}>
+//           <Button color="#ecc94b">Ages 0 - 3</Button>
+//         </Link>
+//         <Link to={{ pathname: '/media', state: { age: '4-8'} }}>
+//           <Button color="#63b3ed">Ages 4 - 8</Button>
+//         </Link>
+//         <Link to={{ pathname: '/media', state: { age: '9-12'} }}>
+//           <Button color="rgb(34, 117, 9)">Ages 9 - 12</Button>
+//         </Link>
+//         <FavoriteButton color="#333" link="/favorite"/>
+//       </Category>
+//     )
+// >>>>>>> 8b2bffda1d1c7740779e9d168cadd069128d803b
 
 //   }
 
