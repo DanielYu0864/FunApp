@@ -9,7 +9,7 @@ import MediaPicker from '../Category/MediaPicker';
 function AgePicker() {
   const localtion = useLocation();
   const {user_id} = localtion.state;
-  console.log('From Age Piker', user_id);
+  // console.log('From Age Piker', user_id);
   return (
     <Category css="age-picker" align="top" navbarColor="pink">
       <Link to={{ pathname: '/category', state: { age: '0-3', user_id: user_id} }}>
@@ -25,18 +25,6 @@ function AgePicker() {
         <FavoriteButton color="#333"/>
       </Link>
     </Category>
-        //   <Category css="age-picker" align="top" navbarColor="pink">
-    //     <Link to={{ pathname: '/category', state: { age: '0-3'} }}>
-    //       <Button color="#ecc94b">Ages 0 - 3</Button>
-    //     </Link>
-    //     <Link to={{ pathname: '/media', state: { age: '4-8'} }}>
-    //       <Button color="#63b3ed">Ages 4 - 8</Button>
-    //     </Link>
-    //     <Link to={{ pathname: '/media', state: { age: '9-12'} }}>
-    //       <Button color="rgb(34, 117, 9)">Ages 9 - 12</Button>
-    //     </Link>
-    //     <FavoriteButton color="#333" link="/favorite"/>
-    //   </Category>
   )
 }
 

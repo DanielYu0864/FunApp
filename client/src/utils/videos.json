@@ -47,7 +47,7 @@
     {
         "id": 5,
         "age" :"all",
-        "type": "food",
+        "type": "foods",
         "title": "Peppa Pig",
         "imbedLink": "https://www.youtube.com/embed/ZHsg_J-qvXI?modestbranding=1&rel=0",
         "width":"1240",
