@@ -12,6 +12,6 @@ export default {
     return axios.post(`/api/favorite/save/${user_id}`, gameInfo);
   },
   favorite: (user_id) => {
-    return axios.get(`/api/favorite/user/${user_id}`);
+    return axios.get(`/api/favorite/get/${user_id}`);
   }
 }
