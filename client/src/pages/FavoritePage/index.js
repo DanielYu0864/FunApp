@@ -61,6 +61,7 @@ function FavoritePage() {
 
   if(favoriteChoose) {
     return <FavoriteContainer
+      user_id={userId}
       favorite={favorite}
       backToOptions={backToOptions}
     />

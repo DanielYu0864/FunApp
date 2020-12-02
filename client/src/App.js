@@ -11,7 +11,7 @@ import Navbar from './components/Navbar/Navbar';
 import GameChoosePage from './pages/GameChoosePage';
 import VideoChoosePage from './pages/VideoChoosePage';
 import FavoritePage from './pages/FavoritePage';
-import CategoryPage from './components/CategoryPage';
+import CategoryPage from './pages/CategoryPage';
 
 
 function App() {
