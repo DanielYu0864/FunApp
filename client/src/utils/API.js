@@ -13,5 +13,8 @@ export default {
   },
   favorite: (user_id) => {
     return axios.get(`/api/favorite/get/${user_id}`);
+  },
+  delete: (favorite_id, user_id) => {
+    return axios.delete(`/api/favorite/delete/${user_id}`, { data: { favorite_id: favorite_id } });
   }
 }

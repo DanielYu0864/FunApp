@@ -69,7 +69,6 @@ module.exports = (app) => {
     await db.Favorites
       .find({_id:body.favorite_id})
       .then(data => {
-        // res.json(data);
         db.User.findByIdAndUpdate(params.user_id, { $pull:  {favorites: body.favorite_id} })
         .then(e => console.log('After delet!: ', e))
         .catch(err => console.error(err));
