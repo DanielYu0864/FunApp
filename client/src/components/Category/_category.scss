@@ -2,7 +2,7 @@
   min-height: 100vh;
 
   display: flex;
-  flex-direction: column;
+  //flex-direction: column;
   padding: 10rem;
   align-items: center;
 
@@ -38,6 +38,11 @@
     background-color: rgb(190, 236, 221);
   }
 
+  &.games,
+  &.videos {
+    flex-direction: column;
+  }
+
   &__container {
     align-self: center;
 
@@ -55,6 +60,11 @@
     &.bottom {
       margin-bottom: 5rem;
       align-self: flex-end;
+    }
+
+    a {
+      display: block;
+      width: max-content;
     }
   }
 
@@ -104,5 +114,9 @@
 
     font-size: 4.8rem;
     color: rgb(255, 255, 255);
+
+    &.alt {
+      color: rgb(87, 110, 103);
+    }
   }
 }

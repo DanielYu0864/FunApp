@@ -60,9 +60,9 @@ function VideoPage({videoList, user_id}) {
   //* else render button
   return (
     <main>
-        <Navbar color="white" />
+        <Navbar color="rgb(87, 110, 103)" />
         <section className="category videos">
-          <h2 className="category__title">Videos</h2>
+          <h2 className="category__title alt">Videos</h2>
             <div className="category__container">
                 {
                   videoArr.map(e => (

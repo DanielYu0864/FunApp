@@ -1,9 +1,8 @@
-.game {
+.media {
   padding: 5rem;
 
-  --game-accent: rgb(117, 214, 117);
-
-  &__contaienr {
+  --media-accent: rgb(117, 214, 117);
+  --media-text &__contaienr {
     display: flex;
     flex-direction: column;
     max-width: 90rem;
@@ -21,7 +20,7 @@
   &__display {
     width: 100%;
     height: 50rem;
-    border: 5px solid var(--game-accent);
+    border: 5px solid var(--media-accent);
     border-radius: 1rem;
     box-shadow: 10px 2px 2px rgba(0, 0, 0, 0.527);
   }
@@ -36,7 +35,7 @@
   &__button {
     border: none;
 
-    background-color: var(--game-accent);
+    background-color: var(--media-accent);
     color: #fff;
 
     font-size: 2rem;
