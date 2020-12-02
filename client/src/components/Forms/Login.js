@@ -1,15 +1,19 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import TextInput from './TextInput';
 import Button from './Button';
 import API from '../../utils/API';
 import Navbar from '../Navbar/Navbar';
 import { Redirect } from 'react-router-dom';
+// import UserContext from '../../utils/UserContext';
 
 
 function Login() {
-
+  //* useContext try 1
+  // const {user} = useContext(UserContext);
+  // console.log(user)
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [userId, setUserId] = useState('');
   const [isLogin, setIsLogin] = useState(false);
 
   useEffect(() => {
@@ -36,8 +40,9 @@ function Login() {
       })
       .then(e => {
         console.log(e)
-        if(e.data === 'logged in') {
-          alert('Logged in!')
+        if(e.data.username === username) {
+          alert('Logged in!');
+          setUserId(e.data._id);
           setIsLogin(true)
         } else {
           alert(e.data)
@@ -53,7 +58,8 @@ function Login() {
 
   //* if login redirect to age page
   if(isLogin) {
-    return <Redirect push to="/age" />
+    return <Redirect push to={{pathname: "age",
+    state: { user_id: userId }}} />
   }
   return (
     <main>

@@ -1,4 +1,3 @@
-const { userInfo } = require('os');
 const path = require('path');
 const db = require('../models');
 module.exports = (app) => {
@@ -81,8 +80,9 @@ module.exports = (app) => {
           res.json('no username')
         } else {
           if(userInfo.password === password) {
-            console.log(true)
-            res.json('logged in');
+            // console.log(true)
+            console.log(userInfo._id);
+            res.json(userInfo);
           } else {
             console.log('password is not correct')
             res.json('password is not correct')
