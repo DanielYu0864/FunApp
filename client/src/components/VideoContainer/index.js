@@ -23,6 +23,7 @@ function VideoContainer({video, backToOptions, user_id}) {
     API.save(videoObject, userId)
       .then(e => {
         console.log(e);
+        if(e.status === 200) alert('Video Save!');
       })
       .catch(err => {
         console.error(err);

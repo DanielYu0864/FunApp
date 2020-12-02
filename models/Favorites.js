@@ -5,7 +5,7 @@ const FavoriteSchema = new Schema({
   'age': String,
   'type': String,
   'title': String,
-  'imbedLind': String,
+  'imbedLink': String,
   'width': String,
   'height': String,
   'scrolling': String

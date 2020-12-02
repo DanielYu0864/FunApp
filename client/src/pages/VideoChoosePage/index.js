@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import videosJSON from '../../utils/videos.json';
 import VideoPage from '../../components/VideoPage';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
+import FavoriteButton from '../../components/FavoriteButton';
 function VideoChoosePage() {
   const location = useLocation();
   const { age, user_id } = location.state;
@@ -34,6 +35,12 @@ function VideoChoosePage() {
   return (
     <div>
       <VideoPage videoList={videoList} user_id={user_id}/>
+      <Link to={{ pathname: '/media', state: { age: age, user_id: user_id } }}>
+        <button>Back to media</button>
+      </Link>
+      <Link to={{ pathname: '/favorite', state: { user_id: user_id } }}>
+        <FavoriteButton/>
+      </Link>
     </div>
   )
 }

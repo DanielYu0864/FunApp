@@ -59,7 +59,6 @@ function VideoPage({videoList, user_id}) {
   return (
     <div>
       <h2>video List</h2>
-      <a href='/favorite'><FavoriteButton/></a>
       {
         videoArr.map(e => (
           <button onClick={() => videoChosen(e.id)} key={e.id}>

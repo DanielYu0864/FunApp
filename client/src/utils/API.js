@@ -8,7 +8,10 @@ export default {
   login: (userInfo) => {
     return axios.post('/user/login', userInfo);
   },
-  save: (gameInfo, _id) => {
-    return axios.post(`/api/favorite/save/${_id}`, gameInfo);
+  save: (gameInfo, user_id) => {
+    return axios.post(`/api/favorite/save/${user_id}`, gameInfo);
+  },
+  favorite: (user_id) => {
+    return axios.get(`/api/favorite/user/${user_id}`);
   }
 }

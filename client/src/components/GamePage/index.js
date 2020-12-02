@@ -22,12 +22,7 @@ function GamePage({gameList, user_id}) {
   //* re-render component when game chose
   useEffect(() => {
     checkLoading();
-  }, [gameChoose]);
-  //* re-render component when game chose
-  useEffect(() => {
-    checkLoading();
-    // console.log('re-render')
-  }, [game])
+  }, [gameChoose, game]);
   //* make sure loading properly
   const checkLoading = async () => {
     await setGameArr(gameList);

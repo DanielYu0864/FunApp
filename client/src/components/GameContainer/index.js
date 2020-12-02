@@ -1,4 +1,3 @@
-import { set } from 'mongoose';
 import React, { useState, useEffect } from 'react'
 import API from '../../utils/API'
 import './style.scss';
@@ -25,6 +24,7 @@ function GameContainer({game, backToOptions, user_id}) {
     API.save(gameObject, userId)
       .then(e => {
         console.log(e);
+        if(e.status === 200) alert('Game Save!');
       })
       .catch(err => {
         console.error(err);
@@ -43,7 +43,6 @@ function GameContainer({game, backToOptions, user_id}) {
   }
   //* render game
   return (
-// <<<<<<< Faranak-views
   <section className="game">
     <div className="game__container">
       <h2 className="game__title">{gameObj.title}</h2>
