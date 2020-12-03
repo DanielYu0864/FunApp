@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "age": "0-3, 4-8",
+        "age": "0-3",
         "type": "fun",
         "title": "Scout Elves Don't Rest",
         "imbedLink": "https://www.youtube.com/embed/1CSET7tiDJ0?modestbranding=1&rel=0",
@@ -90,7 +90,7 @@
     {
         "id": 9,
         "age": "0-3, ",
-        "type": "fun",
+        "type": "fun, education",
         "title": "Blipi Colors and Shapes",
         "imbedLink": "https://www.youtube.com/embed/zxA49vlyop0?modestbranding=1&rel=0",
         "width": "1296" ,
@@ -101,7 +101,7 @@
     {
         "id": 10,
         "age": "0-3, ",
-        "type": "fun",
+        "type": "fun, education",
         "title": "Season Song",
         "imbedLink": "https://www.youtube.com/embed/8ZjpI6fgYSY?modestbranding=1&rel=0",
         "width": "1296" ,
@@ -135,7 +135,7 @@
     {
         "id": 13,
         "age": "0-3",
-        "type": "animals",
+        "type": "fun, animals",
         "title": "Jungle Sliders Game",
         "imbedLink": "https://www.addictinggames.com/embed/html5-games/24574",
         "width": "100%" ,
@@ -145,7 +145,7 @@
     {
         "id": 14,
         "age": "0-3",
-        "type": "animals",
+        "type": "fun, animals",
         "title": "Animal Differences Game",
         "imbedLink": "https://www.addictinggames.com/embed/html5-games/23326",
         "width": "100%" ,
