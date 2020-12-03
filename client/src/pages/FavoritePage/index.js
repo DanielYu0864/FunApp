@@ -17,7 +17,7 @@ function FavoritePage() {
   const loadFavoriteList = () => {
     API.favorite(user_id)
       .then(e => {
-        console.log(e);
+        // console.log(e);
         if(e.status === 200) {
           setFavoriteList(e.data);
         }
@@ -31,7 +31,7 @@ function FavoritePage() {
     let favoriteInfo = favoriteList.filter(e => e._id === _id);
     await setFavorite(favoriteInfo[0]);
     await setFavoriteChoose(true);
-    console.log(favoriteInfo);
+    // console.log(favoriteInfo);
   }
   //* make sure all data has been loaded
   const checkLoading = async () => {
@@ -65,6 +65,18 @@ function FavoritePage() {
       favorite={favorite}
       backToOptions={backToOptions}
     />
+  }
+
+  if(!favoriteList.length) {
+    return (
+      <div>
+      <h1>Favorite List</h1>
+      <h1>Click <button>save</button> to store favorites here</h1>
+      <Link to={{ pathname: '/age', state: { user_id: userId } }}>
+        <button>Back to AgePicker</button>
+      </Link>
+    </div>
+    )
   }
 
   return (

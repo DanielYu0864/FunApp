@@ -28,8 +28,10 @@ module.exports = (app) => {
   });
   //? API call for save data to favorite list
   app.post('/api/favorite/save/:user_id', async ({ body, params }, res) => {
+    //* create the new favorite
     await db.Favorites
       .create(body)
+      //* find user by id and add the new favorite item to the favorite list
       .then(({ _id }) => db.User.findByIdAndUpdate(params.user_id, { $push: { favorites: _id } }, { new: true }))
       .then(dbUser => {
         // console.log(dbUser);
@@ -42,12 +44,15 @@ module.exports = (app) => {
   });
   //? API call for get data from favorite list
   app.get('/api/favorite/get/:user_id', async({ body, params }, res) => {
+    //* 1. find user_id
     await db.User
       .findById(params.user_id)
       .then(dbUser => {
+        //* 2. find user favorite list
         return  dbUser.favorites
       })
       .then(_id => {
+        //* 3. find all favorite data that in the user favorite list
         db.Favorites
           .find({_id:{$in:[..._id]}})
           .then(data => {
@@ -67,8 +72,10 @@ module.exports = (app) => {
     // console.log(body.favorite_id);
     // console.log(params.user_id);
     await db.Favorites
+    //* get the favorite_id from the req.body
       .find({_id:body.favorite_id})
       .then(data => {
+        //* get the user_id from the req.params
         db.User.findByIdAndUpdate(params.user_id, { $pull:  {favorites: body.favorite_id} })
         .then(e => console.log('After delet!: ', e))
         .catch(err => console.error(err));
