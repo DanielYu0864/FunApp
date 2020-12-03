@@ -3,51 +3,51 @@ import Button from '../Category/Button';
 import Navbar from '../Navbar/Navbar';
 import VideoContainer from '../VideoContainer';
 
-function CategoryContainer({videoList, user_id}) {
+function CategoryContainer({mediaList, user_id}) {
   //* set state
   const [userId, setUserId] = useState();
   const [loading, setLoading] = useState(true);
-  const [videoArr, setVideoArr] = useState([]);
-  const [video, setVideo] = useState({});
-  const [videoChoose, setVideoChoose] = useState(false);
+  const [mediaArr, setMediaArr] = useState([]);
+  const [media, setMedia] = useState({});
+  const [mediaChoose, setMediaChoose] = useState(false);
 
   //* re-render component everytime when state changed
   useEffect(() => {
-    if(videoList !== []) {
+    if(mediaList !== []) {
       checkLoading();
     }
   });
-  //* re-render component when video chose
+  //* re-render component when media chose
   useEffect(() => {
     checkLoading();
-  }, [videoChoose, video]);
+  }, [mediaChoose, media]);
   //* make sure loading properly
   const checkLoading = async () => {
-    await setVideoArr(videoList);
+    await setMediaArr(mediaList);
     await setUserId(user_id);
     await setLoading(false);
-    // console.log(videoArr)
+    // console.log(mediaArr)
   }
-  //* change video state to the video data when button click
-  const videoChosen = async (id) => {
-    let videoInfo = videoArr.filter(e => e.id === id);
-    await setVideo(videoInfo[0]);
-    await setVideoChoose(true);
+  //* change media state to the media data when button click
+  const mediaChosen = async (id) => {
+    let mediaInfo = mediaArr.filter(e => e.id === id);
+    await setMedia(mediaInfo[0]);
+    await setMediaChoose(true);
   };
 
-  //* back to the video choose page
+  //* back to the media choose page
   const backToOptions = async () => {
-    await setVideoChoose(false);
+    await setMediaChoose(false);
   }
   //* check loading
   if(loading === true) {
-    console.log('loading from video page')
+    console.log('loading from media page')
     return <h1>Loading ...</h1>
   }
-  //* check video chose
-  if(videoChoose) {
+  //* check media chose
+  if(mediaChoose) {
     return <VideoContainer
-      video={video}
+      video={media}
       user_id={userId}
       backToOptions={backToOptions}
     />
@@ -59,8 +59,8 @@ function CategoryContainer({videoList, user_id}) {
         <h2>Category Container</h2>
         <div>
           {
-            videoArr.map(e => (
-              <Button onClick={() => videoChosen(e.id)} key={e.id}>{e.title}</Button>
+            mediaArr.map(e => (
+              <button onClick={() => mediaChosen(e.id)} key={e.id}>{e.title}</button>
             ))
           }
         </div>
