@@ -11,13 +11,16 @@ function CategoryPicker(props) {
   return (
     <Category css="category-picker" align="top" navbarColor="white">
       <Link to={{ pathname:'/categorypage', state:{ user_id: user_id, type: 'animals' } }}>
-        <Button color="#ecc94b">Fun</Button>
+        <Button color="#ecc94b">Animals</Button>
       </Link>
         <Link to={{ pathname:'/categorypage', state:{ user_id: user_id, type: 'education' } }}>
       <Button color="#63b3ed">Education</Button>
       </Link>
-      <Link to={{ pathname:'/categorypage', state:{ user_id: user_id, type: 'foods' } }}>
+      <Link to={{ pathname:'/categorypage', state:{ user_id: user_id, type: 'music' } }}>
         <Button color="#e53e3e">Music</Button>
+      </Link>
+      <Link to={{ pathname:'/categorypage', state:{ user_id: user_id, type: 'fun' } }}>
+        <Button color="#e53e3e">Fun</Button>
       </Link>
       <Link to={{ pathname:'/favorite', state:{ user_id: user_id } }}>
         <FavoriteButton color="#333"/>

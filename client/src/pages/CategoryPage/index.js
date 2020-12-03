@@ -2,16 +2,17 @@ import React, {useEffect, useState} from 'react'
 import CategoryContainer from '../../components/CategoryContainer'
 import { useLocation, Link } from 'react-router-dom';
 import Button from '../../components/Category/Button';
-import videoJSON from '../../utils/videos.json';
+// import videoJSON from '../../utils/videos.json';
+import media03JSON from '../../utils/media03.json';
 function CategoryPage() {
   const location = useLocation();
-  const { user_id, type } = location.state ?? 'food';
-  const [videoList, setVideoList] = useState([]);
+  const { user_id, type } = location.state ?? 'fun';
+  const [mediaList, setMediaList] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const changeState = (videoList) => {
-    let typeFilter = filterType(videoList, type);
-    setVideoList([...typeFilter]);
+  const changeState = (mediaList) => {
+    let typeFilter = filterType(mediaList, type);
+    setMediaList([...typeFilter]);
     console.log('Type Filter from Category Page: ',typeFilter)
     setLoading(false);
   }
@@ -26,8 +27,10 @@ function CategoryPage() {
   }
 
   useEffect(() => {
-    let videoList = videoJSON;
-    changeState(videoList);
+    let mediaList = media03JSON;
+    let arr = media03JSON;
+    console.log(arr);
+    changeState(mediaList);
   }, []);
 
   if(loading) {
@@ -37,10 +40,9 @@ function CategoryPage() {
   console.log('From Category: ', type)
   return (
     <div>
-      <CategoryContainer videoList={videoList} user_id={user_id}/>
-      Category Page
+      <CategoryContainer mediaList={mediaList} user_id={user_id}/>
       <Link to={{ pathname:'/category', state:{user_id: user_id} }}>
-        <button>Back to Category</button>
+        <button>Back</button>
       </Link>
     </div>
   )
