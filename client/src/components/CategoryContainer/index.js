@@ -3,7 +3,7 @@ import Button from '../Category/Button';
 import Navbar from '../Navbar/Navbar';
 import VideoContainer from '../VideoContainer';
 
-function CategoryContainer({mediaList, user_id}) {
+function CategoryContainer({mediaList, user_id, type}) {
   //* set state
   const [userId, setUserId] = useState();
   const [loading, setLoading] = useState(true);
@@ -26,7 +26,7 @@ function CategoryContainer({mediaList, user_id}) {
     await setMediaArr(mediaList);
     await setUserId(user_id);
     await setLoading(false);
-    // console.log(mediaArr)
+    console.log(mediaArr)
   }
   //* change media state to the media data when button click
   const mediaChosen = async (id) => {
@@ -56,7 +56,7 @@ function CategoryContainer({mediaList, user_id}) {
   return (
     <main>
       <section>
-        <h2>Category Container</h2>
+        <h2>{type}</h2>
         <div>
           {
             mediaArr.map(e => (

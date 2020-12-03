@@ -4,10 +4,12 @@ import VideoPage from '../../components/VideoPage';
 import { useLocation, Link } from 'react-router-dom';
 import FavoriteButton from '../../components/FavoriteButton';
 function VideoChoosePage() {
+  //* use location react router dom to get the value
   const location = useLocation();
   const { age, user_id } = location.state;
   const [videoList, setVideoList] = useState([]);
   const [loading, setLoading] = useState(true);
+
   const changeState = (videoList) => {
     let ageFilter = filterAge(videoList, age)
     setVideoList([...ageFilter]);
@@ -23,12 +25,12 @@ function VideoChoosePage() {
     }
     return outputArr;
   }
-
+  //* componentdidmount
   useEffect(() => {
     let videoList = videosJSON;
     changeState(videoList);
   },[])
-
+  //* check loading...
   if(loading) {
     return <h1>Loading...</h1>
   }
