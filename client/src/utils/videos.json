@@ -36,7 +36,7 @@
     {
         "id": 4,
         "age" :"all",
-        "type": "education",
+        "type": "fun",
         "title": "ReactJS Tutorial - 2 - Hello World",
         "imbedLink": "https://www.youtube.com/embed/9hb_0TZ_MVI?modestbranding=1&rel=0",
         "width":"1240",
@@ -47,7 +47,7 @@
     {
         "id": 5,
         "age" :"4-8",
-        "type": "foods",
+        "type": "fun",
         "title": "Peppa Pig",
         "imbedLink": "https://www.youtube.com/embed/ZHsg_J-qvXI?modestbranding=1&rel=0",
         "width":"1240",
@@ -58,13 +58,122 @@
     {
         "id": 6,
         "age" :"all",
-        "type": "education",
-        "title": "ReactJS Tutorial - 2 - Hello World",
-        "imbedLink": "https://www.youtube.com/embed/9hb_0TZ_MVI?modestbranding=1&rel=0",
+        "type": "",
+        "title": "",
+        "imbedLink": "?modestbranding=1&rel=0",
         "width":"1240",
         "height":"564",
         "frameborder":"0",
         "scrolling": "off"
+    },
+    {
+        "id": 7,
+        "age": "4-8",
+        "type": "fun",
+        "title": "Scout Elves Don't Rest",
+        "imbedLink": "https://www.youtube.com/embed/1CSET7tiDJ0?modestbranding=1&rel=0",
+        "width": "1296" ,
+        "height": "564",
+        "frameborder":"0",
+        "scrolling": "no"
+    },
+    {
+        "id": 8,
+        "age" :"4-8, 9-12",
+        "type": "fun",
+        "title": "Insane Skateboard Tricks",
+        "imbedLink": "https://www.youtube.com/embed/kHUfoZyd6Bw?modestbranding=1&rel=0",
+        "width":"1296",
+        "height":"564",
+        "frameborder":"0",
+        "scrolling": "off"
+    },
+    {
+        "id": 9,
+        "age" :"4-8",
+        "type": "fun, sport",
+        "title": "Skatboarding: Sky and Ocean",
+        "imbedLink": "https://www.youtube.com/embed/9ELsKfeAMXM?modestbranding=1&rel=0",
+        "width":"1296",
+        "height":"564",
+        "frameborder":"0",
+        "scrolling": "off"
+    },
+    {
+        "id": 10,
+        "age" :"4-8, 9-12",
+        "type": "music",
+        "title": "Sunflower: Spiderverse",
+        "imbedLink": "https://www.youtube.com/embed/ApXoWvfEYVU?modestbranding=1&rel=0",
+        "width":"1296",
+        "height":"564",
+        "frameborder":"0",
+        "scrolling": "off"
+    },
+    {
+        "id": 11,
+        "age" :"all",
+        "type": "education",
+        "title": "What is the Legislative Branch",
+        "imbedLink": "https://www.youtube.com/embed/hltv8-nzcUc?modestbranding=1&rel=0",
+        "width":"1296",
+        "height":"564",
+        "frameborder":"0",
+        "scrolling": "off"
+    },
+    {
+        "id": 12,
+        "age" :"9-12",
+        "type": "fun",
+        "title": "Spot the Imposter",
+        "imbedLink": "https://www.youtube.com/embed/cD0wzDClVpc?modestbranding=1&rel=0",
+        "width":"1296",
+        "height":"564",
+        "frameborder":"0",
+        "scrolling": "off"
+    },
+    {
+        "id": 13,
+        "age" :"9-12",
+        "type": "fun",
+        "title": "Minecraft: Why you never dig straight down!",
+        "imbedLink": "https://www.youtube.com/embed/Y7ceiohNbqI?modestbranding=1&rel=0",
+        "width":"1296",
+        "height":"564",
+        "frameborder":"0",
+        "scrolling": "off"
+    },
+    {
+        "id": 14,
+        "age" :"4-8, 9-12",
+        "type": "fun",
+        "title": "Roblox Family",
+        "imbedLink": "https://www.youtube.com/embed/fe97CJejeSY?list=TLPQMDMxMjIwMjCpRAyA4d_MnQ?modestbranding=1&rel=0",
+        "width":"1296",
+        "height":"564",
+        "frameborder":"0",
+        "scrolling": "off"
+    },
+    {
+        "id": 15,
+        "age" :"4-8, 9-12",
+        "type": "fun",
+        "title": "^ Hidden Minecraft Houses",
+        "imbedLink": "https://www.youtube.com/embed/rX8SAGaKWvQ?list=TLPQMDMxMjIwMjCpRAyA4d_MnQ?modestbranding=1&rel=0",
+        "width":"1296",
+        "height":"564",
+        "frameborder":"0",
+        "scrolling": "off"
+    },
+    {
+        "id": 16,
+        "age" :"4-8, 9-12",
+        "type": "fun",
+        "title": "Kid's try Holiday Food from around the world",
+        "imbedLink": "https://www.youtube.com/embed/N5-WHOZQ73I?list=TLPQMDMxMjIwMjCpRAyA4d_MnQ?modestbranding=1&rel=0",
+        "width":"1296",
+        "height":"564",
+        "frameborder":"0",
+        "scrolling": "off"
     }
-
 ]
