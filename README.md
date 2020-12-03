@@ -1,29 +1,50 @@
-# Create React Express App
+# Family Fun App!
+[![License: ISC](https://img.shields.io/badge/License-ISC-green.svg)](https://opensource.org/licenses/ISC)
+## Description
 
-## About This Boilerplate
+An app that you can feel safe letting your child use for watching videos and playing games.
+## Table of Contents
+- [Usage](#usage)
+- [Media](#Media)
+- [Other Info](#other_info)
+- [Languages](#languages)
+- [Deployed](#Deployed)
+- [Questions](#questions)
 
-This setup allows for a Node/Express/React app which can be easily deployed to Heroku.
+An app that you can feel safe letting your child use for watching videos and playing games.
+## Usage
 
-The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
+Use it to destract your kids
+## Media
 
-## Starting the app locally
+Put images here
+## Other_Info?
 
-Start by installing front and backend dependencies. While in this directory, run the following command:
+Other Info
+## Languages
 
-```
-npm install
-```
+React, React Router, JavaScript, SCSS, JSX
+## Deployed
 
-This should install node modules within the server and the client folder.
+Deployed on Heroku
+- https://project03familyapp.herokuapp.com/
+## Repository
+- https://github.com/DanielYu0864/Project-03
+## Questions
 
-After both installations complete, run the following command in your terminal:
-
-```
-npm start
-```
-
-Your app should now be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
-
-## Deployment (Heroku)
-
-To deploy, simply add and commit your changes, and push to Heroku. As is, the NPM scripts should take care of the rest.
+Contact us via email or github with questions.
+- Daniel Yu:
+- [DanielYu0864](https://github.com/DanielYu0864)
+- adam741963@gmail.com
+- Farank Sabet:
+- [FaranakSabet](https://github.com/FaranakSabet)
+- faranaksabet@yahoo.com
+- Pete Low:
+- [PeteLow13](http://github.com/PeteLow13)
+- pedritolow@gmail.com
+- Anthony Toshiaki:
+- [atoshiaki](https://github.com/atoshiaki)
+- atoshiakid@gmail.com
+- Vasile Tronciu:
+- [tronciu92](https://github.com/tronciu92)
+- tronciu92@gmail.com
