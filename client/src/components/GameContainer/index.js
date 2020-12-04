@@ -8,7 +8,6 @@ function GameContainer({game, backToOptions, user_id}) {
   const [loading, setLoading] = useState(true);
   const saveGame = event => {
     event.preventDefault();
-    console.log('User ID: ' + userId);
     let gameObject = {
       age: gameObj.age,
       type: gameObj.type,
@@ -18,8 +17,6 @@ function GameContainer({game, backToOptions, user_id}) {
       height: gameObj.height,
       scrolling: gameObj.scrolling
     };
-    // console.log('Game Object:', {age: gameObj.age, title: gameObj.title, imbedLink: gameObj.imbedLink, width: gameObj.width, height: gameObj.height, scrolling: gameObj.scrolling});
-    console.log(gameObject);
     API.save(gameObject, userId)
       .then(e => {
         console.log(e);
@@ -49,8 +46,6 @@ function GameContainer({game, backToOptions, user_id}) {
         title={gameObj.title}
         className='media__display'
         title={gameObj.title}
-        // width={gameObj.width}
-        // height={gameObj.height}
         src={gameObj.imbedLink}
         scrolling={gameObj.scrolling}
         sandbox='allow-forms allow-scripts allow-modals allow-orientation-lock allow-pointer-lock allow-presentation allow-same-origin allow-top-navigation allow-top-navigation-by-user-activation allow-popups-to-escape-sandbox'

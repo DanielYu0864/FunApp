@@ -26,7 +26,6 @@ function CategoryContainer({mediaList, user_id, type}) {
     await setMediaArr(mediaList);
     await setUserId(user_id);
     await setLoading(false);
-    console.log(mediaArr)
   }
   //* change media state to the media data when button click
   const mediaChosen = async (id) => {
@@ -52,7 +51,7 @@ function CategoryContainer({mediaList, user_id, type}) {
       backToOptions={backToOptions}
     />
   }
-
+  //* functional loop through the array and render the components
   return (
     <main>
       <section>
@@ -64,7 +63,6 @@ function CategoryContainer({mediaList, user_id, type}) {
             ))
           }
         </div>
-
       </section>
 
     </main>

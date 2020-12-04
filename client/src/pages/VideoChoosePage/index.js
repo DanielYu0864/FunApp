@@ -9,12 +9,11 @@ function VideoChoosePage() {
   const { age, user_id } = location.state;
   const [videoList, setVideoList] = useState([]);
   const [loading, setLoading] = useState(true);
-
-  const changeState = (videoList) => {
-    let ageFilter = filterAge(videoList, age)
-    setVideoList([...ageFilter]);
-    console.log('ageFilter', ageFilter);
-    setLoading(false);
+  //* make ure datas are loaded
+  const changeState = async (videoList) => {
+    let ageFilter = await filterAge(videoList, age)
+    await setVideoList([...ageFilter]);
+    await setLoading(false);
   };
   //* function for filter the video list by user age
   const filterAge = (inputArr, inputAge) => {

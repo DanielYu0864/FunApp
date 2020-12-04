@@ -6,7 +6,6 @@ function FavoritePage() {
   //* useLoation to get the value form state
   const location = useLocation();
   const { user_id } = location.state;
-  // console.log('From favorite page',user_id);
   const [userId, setUserId] = useState();
   const [favoriteList, setFavoriteList] = useState([]);
   const [favorite, setFavorite] = useState({});
@@ -17,7 +16,6 @@ function FavoritePage() {
   const loadFavoriteList = () => {
     API.favorite(user_id)
       .then(e => {
-        // console.log(e);
         if(e.status === 200) {
           setFavoriteList(e.data);
         }
@@ -31,14 +29,12 @@ function FavoritePage() {
     let favoriteInfo = favoriteList.filter(e => e._id === _id);
     await setFavorite(favoriteInfo[0]);
     await setFavoriteChoose(true);
-    // console.log(favoriteInfo);
   }
   //* make sure all data has been loaded
   const checkLoading = async () => {
     await loadFavoriteList();
     await setUserId(user_id);
     await setLoading(false);
-    // console.log(favoriteList);
   }
   //* change favoriteChoose state to re-render the component
   const backToOptions = async () => {
@@ -54,11 +50,11 @@ function FavoritePage() {
   useEffect(() => {
     checkLoading();
   }, [favoriteChoose, favorite]);
-
+  //* check if page loaded
   if(loading) {
     return <h1>Loading ...</h1>
   }
-
+  //* check if favorite is chosen
   if(favoriteChoose) {
     return <FavoriteContainer
       user_id={userId}
@@ -66,7 +62,7 @@ function FavoritePage() {
       backToOptions={backToOptions}
     />
   }
-
+  //* chek if favorite list not empty
   if(!favoriteList.length) {
     return (
       <div>
@@ -78,19 +74,22 @@ function FavoritePage() {
     </div>
     )
   }
-
+  //* map loop through every object in the array
   return (
     <div>
       <h1>Favorite List</h1>
+
       {
+
         favoriteList.map(e => (
+
           <button onClick={() => handleChoose(e._id)}>
             {e.title}
           </button>
         ))
       }
       <Link to={{ pathname: '/age', state: { user_id: userId } }}>
-        <button>Back to AgePicker</button>
+        <button>Back</button>
       </Link>
     </div>
   )

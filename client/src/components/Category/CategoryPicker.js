@@ -7,8 +7,8 @@ import FavoriteButton from '../FavoriteButton';
 function CategoryPicker(props) {
   const location = useLocation();
   const {user_id} = location.state ?? 5;
-  console.log(user_id, '-> From category');
   return (
+    //* use useLocation and Link to passed the value to the route
     <Category css="category-picker" align="top" navbarColor="white">
       <Link to={{ pathname:'/categorypage', state:{ user_id: user_id, type: 'animals' } }}>
         <Button color="#ecc94b">Animals</Button>
