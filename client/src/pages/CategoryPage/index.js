@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react'
-import CategoryContainer from '../../components/CategoryContainer'
 import { useLocation, Link } from 'react-router-dom';
+import CategoryContainer from '../../components/CategoryContainer'
 import Button from '../../components/Category/Button';
 import media03JSON from '../../utils/media03.json';
+import ActionButton from '../../components/ActionButton';
 function CategoryPage() {
   const location = useLocation();
   const { user_id, type } = location.state ?? 'fun';
@@ -43,9 +44,11 @@ function CategoryPage() {
   return (
     <div>
       <CategoryContainer type={upperType} mediaList={mediaList} user_id={user_id}/>
-      <Link to={{ pathname:'/category', state:{user_id: user_id} }}>
-        <button>Back</button>
-      </Link>
+
+      <div className="actions">
+        <ActionButton color="#48cb1f" link={{ pathname: '/favorite', state: { user_id: user_id } }} />
+        <ActionButton link={{ pathname: '/category', state: { user_id: user_id } }} color="#333">Back To Age</ActionButton>
+      </div>
     </div>
   )
 }
