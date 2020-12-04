@@ -52,19 +52,20 @@ function CategoryContainer({mediaList, user_id, type}) {
     />
   }
   //* functional loop through the array and render the components
+
   return (
     <main>
-      <section>
-        <h2>{type}</h2>
-        <div>
-          {
-            mediaArr.map(e => (
-              <button onClick={() => mediaChosen(e.id)} key={e.id}>{e.title}</button>
-            ))
-          }
-        </div>
-      </section>
-
+        <Navbar color='white' />
+        <section className='category type'>
+          <h2 className='category__title'>{type}</h2>
+            <div className='category__container'>
+                {
+                  mediaArr.map(e => (
+                    <Button border='#fff' color='#805ad5' onClick={() => mediaChosen(e.id)} key={e.id}>{e.title}</Button>
+                  ))
+                }
+            </div>
+        </section>
     </main>
   )
 }

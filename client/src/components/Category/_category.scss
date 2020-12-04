@@ -38,8 +38,18 @@
     background-color: rgb(190, 236, 221);
   }
 
+  &.type {
+    background-color: rgb(178, 149, 231);
+  }
+
+  &.favorite {
+    background-color: rgb(163, 219, 111);
+  }
+
   &.games,
-  &.videos {
+  &.videos,
+  &.type,
+  &.favorite {
     flex-direction: column;
   }
 
@@ -64,7 +74,8 @@
 
     a {
       display: block;
-      width: max-content;
+      width: 100%;
+      max-width: 20rem;
     }
   }
 
@@ -118,5 +129,10 @@
     &.alt {
       color: rgb(87, 110, 103);
     }
+  }
+
+  &__message {
+    font-size: 3.2rem;
+    color: #5b9349;
   }
 }

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import GamePage from '../../components/GamePage';
 import gamesJSON from '../../utils/games.json';
 import { useLocation, Link } from 'react-router-dom';
-import FavoriteButton from '../../components/FavoriteButton';
+import ActionButton from '../../components/ActionButton';
 
 function GameChoosePage() {
   const location = useLocation();
@@ -37,12 +37,10 @@ function GameChoosePage() {
   return (
     <div>
       <GamePage gameList={gameList} user_id={user_id}/>
-      <Link to={{ pathname: '/media', state: { age: age, user_id: user_id } }}>
-        <button>Back to media</button>
-      </Link>
-      <Link to={{ pathname: '/favorite', state: { user_id: user_id } }}>
-        <FavoriteButton/>
-      </Link>
+      <div className="actions">
+        <ActionButton link={{ pathname: '/favorite', state: { user_id: user_id } }} />
+        <ActionButton link={{ pathname: '/media', state: { age: age, user_id: user_id } }} color="#333">Back to media</ActionButton>
+      </div>
     </div>
   )
 }

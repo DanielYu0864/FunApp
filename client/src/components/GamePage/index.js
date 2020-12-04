@@ -3,8 +3,6 @@ import GameContainer from '../GameContainer';
 import Button from '../Category/Button';
 import Navbar from '../Navbar/Navbar';
 
-import FavoriteButton from '../FavoriteButton';
-
 function GamePage({gameList, user_id}) {
   //* set state
   const [userId, setUserId] = useState();

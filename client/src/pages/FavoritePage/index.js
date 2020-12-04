@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { useLocation, Link } from 'react-router-dom';
 import API from '../../utils/API';
-import FavoriteContainer from '../../components/FavoriteContainer'
+import FavoriteContainer from '../../components/FavoriteContainer';
+import ActionButton from '../../components/ActionButton';
+import Navbar from '../../components/Navbar/Navbar';
+import Button from '../../components/Category/Button';
+
 function FavoritePage() {
   //* useLoation to get the value form state
   const location = useLocation();
@@ -62,37 +66,46 @@ function FavoritePage() {
       backToOptions={backToOptions}
     />
   }
+
+
+
+
   //* chek if favorite list not empty
   if(!favoriteList.length) {
     return (
-      <div>
-      <h1>Favorite List</h1>
-      <h1>Click <button>save</button> to store favorites here</h1>
-      <Link to={{ pathname: '/age', state: { user_id: userId } }}>
-        <button>Back to AgePicker</button>
-      </Link>
-    </div>
-    )
+    <main>
+        <Navbar color='white' />
+        <section className='category favorite'>
+          <h2 className='category__title'>Favorites List</h2>
+          <h3 className="category__message">Click <span>"save"</span> on a game or video to store favorites here</h3>
+          <div className="actions">
+            <ActionButton link={{ pathname: '/age', state: { user_id: userId } }} color="#333">Back to Age Picker</ActionButton>
+          </div>
+        </section>
+    </main>
+  )
   }
   //* map loop through every object in the array
+
   return (
-    <div>
-      <h1>Favorite List</h1>
-
-      {
-
-        favoriteList.map(e => (
-
-          <button onClick={() => handleChoose(e._id)}>
-            {e.title}
-          </button>
-        ))
-      }
-      <Link to={{ pathname: '/age', state: { user_id: userId } }}>
-        <button>Back</button>
-      </Link>
-    </div>
+    <main>
+        <Navbar color='white' />
+        <section className='category favorite'>
+          <h2 className='category__title'>Favorites List</h2>
+            <div className='category__container'>
+                {
+                  favoriteList.map(e => (
+                    <Button border='#fff' color='#358f19' onClick={() => handleChoose(e.id)} key={e.id}>{e.title}</Button>
+                  ))
+                }
+            </div>
+            <div className="actions">
+              <ActionButton link={{ pathname: '/age', state: { user_id: userId } }} color="#333">Back to Age Picker</ActionButton>
+            </div>
+        </section>
+    </main>
   )
+
 }
 
 export default FavoritePage
