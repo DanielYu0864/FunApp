@@ -1,42 +1,35 @@
 import React, { useState } from 'react';
 import Category from './Category';
 import Button from './Button';
-import {useLocation} from 'react-router-dom';
-import FavoriteButton from '../FavoriteButton';
+import {useLocation, Link} from 'react-router-dom';
+import ActionButton from '../ActionButton';
 
 function CategoryPicker(props) {
   const location = useLocation();
-  const {age} = location.state ?? 5;
+  const {user_id} = location.state ?? 5;
   return (
+    //* use useLocation and Link to passed the value to the route
     <Category css="category-picker" align="top" navbarColor="white">
-      <Button color="#ecc94b">Animals</Button>
+      <Link to={{ pathname:'/categorypage', state:{ user_id: user_id, type: 'animals' } }}>
+        <Button color="#ecc94b">Animals</Button>
+      </Link>
+        <Link to={{ pathname:'/categorypage', state:{ user_id: user_id, type: 'education' } }}>
       <Button color="#63b3ed">Education</Button>
-      <Button color="#e53e3e">Food</Button>
-      <FavoriteButton color="#333" link="/favorite"/>
+      </Link>
+      <Link to={{ pathname:'/categorypage', state:{ user_id: user_id, type: 'music' } }}>
+        <Button color="#e53e3e">Music</Button>
+      </Link>
+      <Link to={{ pathname:'/categorypage', state:{ user_id: user_id, type: 'fun' } }}>
+        <Button color="#805ad5">Fun</Button>
+      </Link>
+
+      <div className="actions">
+        <ActionButton link={{ pathname:'/favorite', state:{ user_id: user_id } }}/>
+        <ActionButton link={{ pathname:'/age', state:{ user_id: user_id } }} color="#333">Back</ActionButton>
+      </div>
+
     </Category>
   )
 }
 
 export default CategoryPicker
-
-// export default class CategoryPicker extends React.Component {
-
-//   constructor(props) {
-//     super(props);
-//     console.log(this.props)
-//   }
-
-//   render() {
-
-//     return (
-//       <Category css="category-picker" align="top" navbarColor="white">
-//         <Button color="#ecc94b">Animals</Button>
-//         <Button color="#63b3ed">Education</Button>
-//         <Button color="#e53e3e">Food</Button>
-//         <a href='/favorite'><FavoriteButton/></a>
-//       </Category>
-//     )
-
-//   }
-
-// }

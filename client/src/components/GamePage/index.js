@@ -1,15 +1,11 @@
 import React, {useState, useEffect}from 'react'
 import GameContainer from '../GameContainer';
-// <<<<<<< Faranak-views
 import Button from '../Category/Button';
 import Navbar from '../Navbar/Navbar';
 
-// =======
-import FavoriteButton from '../FavoriteButton';
-// >>>>>>> main
-function GamePage({gameList}) {
-  // console.log(gameList)
+function GamePage({gameList, user_id}) {
   //* set state
+  const [userId, setUserId] = useState();
   const [loading, setLoading] = useState(true);
   const [gameArr, setGameArr] = useState([]);
   const [game, setGame] = useState({});
@@ -23,22 +19,16 @@ function GamePage({gameList}) {
   //* re-render component when game chose
   useEffect(() => {
     checkLoading();
-  }, [gameChoose]);
-  //* re-render component when game chose
-  useEffect(() => {
-    checkLoading();
-    // console.log('re-render')
-  }, [game])
+  }, [gameChoose, game]);
   //* make sure loading properly
   const checkLoading = async () => {
     await setGameArr(gameList);
+    await setUserId(user_id);
     await setLoading(false);
-    // console.log(gameArr)
   }
   //* change game state to the game data when button click
   const gameChosen = async (id) => {
     let gameInfo = gameArr.filter(e => e.id === id);
-    // console.log(gameInfo);
     await setGame(gameInfo[0]);
     await setGameChoose(true);
   };
@@ -53,6 +43,7 @@ function GamePage({gameList}) {
   //* check game chose
   if(gameChoose) {
     return <GameContainer
+      user_id={userId}
       game={game}
       backToOptions={backToOptions}
     />
@@ -61,13 +52,13 @@ function GamePage({gameList}) {
   return (
 
     <main>
-        <Navbar color="white" />
-        <section className="category games">
-          <h2 className="category__title">Games</h2>
-            <div className="category__container">
+        <Navbar color='white' />
+        <section className='category games'>
+          <h2 className='category__title'>Games</h2>
+            <div className='category__container'>
                 {
                   gameArr.map(e => (
-                    <Button border="#fff" onClick={() => gameChosen(e.id)} key={e.id}>{e.title}</Button>
+                    <Button border='#fff' onClick={() => gameChosen(e.id)} key={e.id}>{e.title}</Button>
                   ))
                 }
             </div>
@@ -76,29 +67,6 @@ function GamePage({gameList}) {
 
   )
 
-
-  /*
-  <div>
-      <h2>Game List</h2>
-// <<<<<<< Faranak-views
-      //{
-       // gameArr.map(e => (
-          //<button onClick={() => gameChosen(e.id)} key={e.id}>
-           // {e.title}
-// =======
-      <a href='/favorite'><FavoriteButton/></a>
-      {
-        gameArr.map(e => (
-          <button onClick={() => gameChosen(e.id)} key={e.id}>
-            {e.title}
-// >>>>>>> main
-          </button>
-       // ))
-     // }
-    </div>
-
-  */
-
 }
 
-export default GamePage
+export default GamePage;

@@ -5,8 +5,8 @@ const FavoriteSchema = new Schema({
   'age': String,
   'type': String,
   'title': String,
-  'imbedLind': String,
-  'wideth': String,
+  'imbedLink': String,
+  'width': String,
   'height': String,
   'scrolling': String
 });

@@ -1,0 +1,50 @@
+.actions {
+  position: fixed;
+
+  top: 4rem;
+  right: 5rem;
+
+  display: flex;
+
+  @include phone {
+    top: 3rem;
+    right: 3rem;
+  }
+
+  & > *:not(:last-child) {
+    margin-right: 2rem;
+  }
+
+  &.stacked {
+    flex-direction: column;
+  }
+
+  &.stacked > *:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 2rem;
+  }
+
+  a {
+    display: block;
+  }
+
+  &__button {
+    --btn-bg: cornflowerblue;
+    --btn-text: #fff;
+
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 600;
+    width: max-content;
+
+    text-align: center;
+
+    padding: 1.5rem 3rem;
+
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    border-radius: 0.7rem;
+  }
+}
