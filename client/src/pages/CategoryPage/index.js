@@ -9,14 +9,13 @@ function CategoryPage() {
   const [upperType, setUpperType] = useState();
   const [mediaList, setMediaList] = useState([]);
   const [loading, setLoading] = useState(true);
-
-  const changeState = (mediaList) => {
+  //* make sure data is loaded
+  const changeState = async (mediaList) => {
     let typeFilter = filterType(mediaList, type);
-    setMediaList([...typeFilter]);
-    // console.log('Type Filter from Category Page: ',typeFilter)
-    setLoading(false);
+    await setMediaList([...typeFilter]);
+    await setLoading(false);
   }
-
+  //* filter the element by type
   const filterType = (inputArr, inputType) => {
     const outputArr = [];
     for(let i = 0; i < inputArr.length; i++) {
@@ -25,23 +24,22 @@ function CategoryPage() {
     }
     return outputArr;
   }
-
+  //* change the input string first character to upper case
   const toUpper = (input) => {
     let upper = input[0].toUpperCase() + input.substring(1)
     setUpperType(upper);
   }
-
-  useEffect(() => {
+  //* componentDidMount in Class component
+  useEffect(async () => {
     let mediaList = media03JSON;
-    toUpper(type);
-    changeState(mediaList);
+    await toUpper(type);
+    await changeState(mediaList);
   }, []);
-
+  //* check the page is loaded
   if(loading) {
     return <h1>Loading...</h1>
   }
 
-  // console.log('From Category: ', type)
   return (
     <div>
       <CategoryContainer type={upperType} mediaList={mediaList} user_id={user_id}/>

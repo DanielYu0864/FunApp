@@ -5,9 +5,9 @@ import FavoriteButton from '../FavoriteButton';
 import { Link, useLocation } from 'react-router-dom';
 
 function AgePicker() {
+  //* use Link and use location to passed value to the route
   const localtion = useLocation();
   const {user_id} = localtion.state;
-  // console.log('From Age Piker', user_id);
   return (
     <Category css="age-picker" align="top" navbarColor="pink">
       <Link to={{ pathname: '/category', state: { age: '0-3', user_id: user_id} }}>

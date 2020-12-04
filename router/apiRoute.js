@@ -34,7 +34,6 @@ module.exports = (app) => {
       //* find user by id and add the new favorite item to the favorite list
       .then(({ _id }) => db.User.findByIdAndUpdate(params.user_id, { $push: { favorites: _id } }, { new: true }))
       .then(dbUser => {
-        // console.log(dbUser);
         res.status(200).json(dbUser);
       })
       .catch(err => {
@@ -56,7 +55,6 @@ module.exports = (app) => {
         db.Favorites
           .find({_id:{$in:[..._id]}})
           .then(data => {
-            // console.log(data);
             res.status(200).json(data);
           })
           .catch(err => {
@@ -69,8 +67,6 @@ module.exports = (app) => {
   });
   //? API call for delete the favorite item from favorite list
   app.delete('/api/favorite/delete/:user_id', async({ body, params }, res) => {
-    // console.log(body.favorite_id);
-    // console.log(params.user_id);
     await db.Favorites
     //* get the favorite_id from the req.body
       .find({_id:body.favorite_id})
