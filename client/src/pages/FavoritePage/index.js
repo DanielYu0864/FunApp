@@ -95,8 +95,8 @@ function FavoritePage() {
             <div className='category__container'>
                 {
                   favoriteList.map(e => (
-                    <Button border='#fff' color='#358f19' onClick={() => handleChoose(e.id)} key={e.id}>{e.title}</Button>
-                  ))
+                    <Button border='#fff' color='#358f19' onClick={() => handleChoose(e._id)} key={e.id}>{e.title}</Button>
+                    ))
                 }
             </div>
             <div className="actions">
