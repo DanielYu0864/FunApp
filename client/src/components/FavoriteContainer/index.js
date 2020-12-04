@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import API from '../../utils/API';
 function FavoriteContainer({favorite, user_id, backToOptions}) {
+  //* set state
   const [loading, setLoading] = useState(true);
   const [userId, setUserId] = useState();
   const [favoriteObj, setFavoriteObj] = useState({});
+  //* delete the favorite from save list
   const deleteBtn = event => {
     event.preventDefault();
     let favoriteId = favoriteObj._id
@@ -18,15 +20,18 @@ function FavoriteContainer({favorite, user_id, backToOptions}) {
         console.error(err);
       })
   }
-  useEffect(() => {
-    setUserId(user_id);
-    setFavoriteObj(favorite);
-    setLoading(false);
+  //* re-render componet every time when state change
+  //* ComponentDidUpdate
+  useEffect(async () => {
+    await setUserId(user_id);
+    await setFavoriteObj(favorite);
+    await setLoading(false);
   });
-
+  //* check loading
   if(loading) {
     return <h1>Loading...</h1>
   }
+  //* use iframe to display the data
   return (
     <div>
       <h1>{favoriteObj.title}</h1>

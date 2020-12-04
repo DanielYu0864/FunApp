@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import Category from './Category';
 import Button from './Button';
 import {useLocation, Link} from 'react-router-dom';
-import FavoriteButton from '../FavoriteButton';
+import ActionButton from '../ActionButton';
 
 function CategoryPicker(props) {
   const location = useLocation();
   const {user_id} = location.state ?? 5;
-  console.log(user_id, '-> From category');
   return (
+    //* use useLocation and Link to passed the value to the route
     <Category css="category-picker" align="top" navbarColor="white">
       <Link to={{ pathname:'/categorypage', state:{ user_id: user_id, type: 'animals' } }}>
         <Button color="#ecc94b">Animals</Button>
@@ -20,14 +20,13 @@ function CategoryPicker(props) {
         <Button color="#e53e3e">Music</Button>
       </Link>
       <Link to={{ pathname:'/categorypage', state:{ user_id: user_id, type: 'fun' } }}>
-        <Button color="#e53e3e">Fun</Button>
+        <Button color="#805ad5">Fun</Button>
       </Link>
-      <Link to={{ pathname:'/favorite', state:{ user_id: user_id } }}>
-        <FavoriteButton color="#333"/>
-      </Link>
-      <Link to={{ pathname:'/age', state:{ user_id: user_id } }}>
-        <Button>Back</Button>
-      </Link>
+
+      <div className="actions">
+        <ActionButton link={{ pathname:'/favorite', state:{ user_id: user_id } }}/>
+        <ActionButton link={{ pathname:'/age', state:{ user_id: user_id } }} color="#333">Back</ActionButton>
+      </div>
 
     </Category>
   )

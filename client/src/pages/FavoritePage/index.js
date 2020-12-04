@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import { useLocation, Link } from 'react-router-dom';
 import API from '../../utils/API';
-import FavoriteContainer from '../../components/FavoriteContainer'
+import FavoriteContainer from '../../components/FavoriteContainer';
+import ActionButton from '../../components/ActionButton';
+import Navbar from '../../components/Navbar/Navbar';
+import Button from '../../components/Category/Button';
+
 function FavoritePage() {
   //* useLoation to get the value form state
   const location = useLocation();
   const { user_id } = location.state;
-  // console.log('From favorite page',user_id);
   const [userId, setUserId] = useState();
   const [favoriteList, setFavoriteList] = useState([]);
   const [favorite, setFavorite] = useState({});
@@ -17,7 +20,6 @@ function FavoritePage() {
   const loadFavoriteList = () => {
     API.favorite(user_id)
       .then(e => {
-        // console.log(e);
         if(e.status === 200) {
           setFavoriteList(e.data);
         }
@@ -31,14 +33,12 @@ function FavoritePage() {
     let favoriteInfo = favoriteList.filter(e => e._id === _id);
     await setFavorite(favoriteInfo[0]);
     await setFavoriteChoose(true);
-    // console.log(favoriteInfo);
   }
   //* make sure all data has been loaded
   const checkLoading = async () => {
     await loadFavoriteList();
     await setUserId(user_id);
     await setLoading(false);
-    // console.log(favoriteList);
   }
   //* change favoriteChoose state to re-render the component
   const backToOptions = async () => {
@@ -54,11 +54,11 @@ function FavoritePage() {
   useEffect(() => {
     checkLoading();
   }, [favoriteChoose, favorite]);
-
+  //* check if page loaded
   if(loading) {
     return <h1>Loading ...</h1>
   }
-
+  //* check if favorite is chosen
   if(favoriteChoose) {
     return <FavoriteContainer
       user_id={userId}
@@ -67,33 +67,45 @@ function FavoritePage() {
     />
   }
 
+
+
+
+  //* chek if favorite list not empty
   if(!favoriteList.length) {
     return (
-      <div>
-      <h1>Favorite List</h1>
-      <h1>Click <button>save</button> to store favorites here</h1>
-      <Link to={{ pathname: '/age', state: { user_id: userId } }}>
-        <button>Back to AgePicker</button>
-      </Link>
-    </div>
-    )
+    <main>
+        <Navbar color='white' />
+        <section className='category favorite'>
+          <h2 className='category__title'>Favorites List</h2>
+          <h3 className="category__message">Click <span>"save"</span> on a game or video to store favorites here</h3>
+          <div className="actions">
+            <ActionButton link={{ pathname: '/age', state: { user_id: userId } }} color="#333">Back to Age Picker</ActionButton>
+          </div>
+        </section>
+    </main>
+  )
   }
+  //* map loop through every object in the array
 
   return (
-    <div>
-      <h1>Favorite List</h1>
-      {
-        favoriteList.map(e => (
-          <button onClick={() => handleChoose(e._id)}>
-            {e.title}
-          </button>
-        ))
-      }
-      <Link to={{ pathname: '/age', state: { user_id: userId } }}>
-        <button>Back to AgePicker</button>
-      </Link>
-    </div>
+    <main>
+        <Navbar color='white' />
+        <section className='category favorite'>
+          <h2 className='category__title'>Favorites List</h2>
+            <div className='category__container'>
+                {
+                  favoriteList.map(e => (
+                    <Button border='#fff' color='#358f19' onClick={() => handleChoose(e.id)} key={e.id}>{e.title}</Button>
+                  ))
+                }
+            </div>
+            <div className="actions">
+              <ActionButton link={{ pathname: '/age', state: { user_id: userId } }} color="#333">Back to Age Picker</ActionButton>
+            </div>
+        </section>
+    </main>
   )
+
 }
 
 export default FavoritePage

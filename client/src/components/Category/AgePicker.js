@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useContext } from 'react';
 import Category from './Category';
 import Button from './Button';
-import FavoriteButton from '../FavoriteButton';
+import ActionButton from '../ActionButton';
 import { Link, useLocation } from 'react-router-dom';
 
 function AgePicker() {
+  //* use Link and use location to passed value to the route
   const localtion = useLocation();
   const {user_id} = localtion.state;
-  // console.log('From Age Piker', user_id);
   return (
     <Category css="age-picker" align="top" navbarColor="pink">
       <Link to={{ pathname: '/category', state: { age: '0-3', user_id: user_id} }}>
@@ -19,9 +19,9 @@ function AgePicker() {
       <Link to={{ pathname: '/media', state: { age: '9-12', user_id: user_id} }}>
         <Button color="rgb(34, 117, 9)">Ages 9 - 12</Button>
       </Link>
-      <Link to={{ pathname: '/favorite', state: { user_id: user_id } }}>
-        <FavoriteButton color="#333"/>
-      </Link>
+      <div className="actions">
+        <ActionButton color="#333" link={{ pathname: '/favorite', state: { user_id: user_id } }} />
+      </div>
     </Category>
   )
 }

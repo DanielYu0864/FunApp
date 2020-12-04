@@ -58,9 +58,9 @@
     {
         "id": 6,
         "age" :"all",
-        "type": "",
-        "title": "",
-        "imbedLink": "?modestbranding=1&rel=0",
+        "type": "education",
+        "title": "Coding For Kids in Python",
+        "imbedLink": "https://www.youtube.com/embed/uzyiCpsS0qQ?modestbranding=1&rel=0",
         "width":"1240",
         "height":"564",
         "frameborder":"0",

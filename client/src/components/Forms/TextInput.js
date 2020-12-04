@@ -2,7 +2,7 @@ import React from 'react'
 
 const TextInput = ({value, handleInputChange, type, hint, label, placeholder, name}) => {
 
-
+    //* get input value from the parent component
     return (
         <div className="form__input">
             <label className="form__input-label">{label || ''}</label>

@@ -3,10 +3,7 @@ import GameContainer from '../GameContainer';
 import Button from '../Category/Button';
 import Navbar from '../Navbar/Navbar';
 
-import FavoriteButton from '../FavoriteButton';
-
 function GamePage({gameList, user_id}) {
-  // console.log(gameList)
   //* set state
   const [userId, setUserId] = useState();
   const [loading, setLoading] = useState(true);
@@ -28,13 +25,10 @@ function GamePage({gameList, user_id}) {
     await setGameArr(gameList);
     await setUserId(user_id);
     await setLoading(false);
-    // console.log(gameArr);
-    console.log('From Game Page: ', userId);
   }
   //* change game state to the game data when button click
   const gameChosen = async (id) => {
     let gameInfo = gameArr.filter(e => e.id === id);
-    // console.log(gameInfo);
     await setGame(gameInfo[0]);
     await setGameChoose(true);
   };
@@ -58,13 +52,13 @@ function GamePage({gameList, user_id}) {
   return (
 
     <main>
-        <Navbar color="white" />
-        <section className="category games">
-          <h2 className="category__title">Games</h2>
-            <div className="category__container">
+        <Navbar color='white' />
+        <section className='category games'>
+          <h2 className='category__title'>Games</h2>
+            <div className='category__container'>
                 {
                   gameArr.map(e => (
-                    <Button border="#fff" onClick={() => gameChosen(e.id)} key={e.id}>{e.title}</Button>
+                    <Button border='#fff' onClick={() => gameChosen(e.id)} key={e.id}>{e.title}</Button>
                   ))
                 }
             </div>
@@ -73,29 +67,6 @@ function GamePage({gameList, user_id}) {
 
   )
 
-
-  /*
-  <div>
-      <h2>Game List</h2>
-// <<<<<<< Faranak-views
-      //{
-       // gameArr.map(e => (
-          //<button onClick={() => gameChosen(e.id)} key={e.id}>
-           // {e.title}
-// =======
-      <a href='/favorite'><FavoriteButton/></a>
-      {
-        gameArr.map(e => (
-          <button onClick={() => gameChosen(e.id)} key={e.id}>
-            {e.title}
-// >>>>>>> main
-          </button>
-       // ))
-     // }
-    </div>
-
-  */
-
 }
 
-export default GamePage
+export default GamePage;
