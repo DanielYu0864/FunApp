@@ -47,7 +47,7 @@ function CategoryPage() {
 
       <div className="actions">
         <ActionButton color="#48cb1f" link={{ pathname: '/favorite', state: { user_id: user_id } }} />
-        <ActionButton link={{ pathname: '/category', state: { user_id: user_id } }} color="#333">Back To Age</ActionButton>
+        <ActionButton link={{ pathname: '/category', state: { user_id: user_id } }} color="#333">Back To Media</ActionButton>
       </div>
     </div>
   )

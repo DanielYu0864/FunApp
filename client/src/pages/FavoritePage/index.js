@@ -79,7 +79,7 @@ function FavoritePage() {
           <h2 className='category__title'>Favorites List</h2>
           <h3 className="category__message">Click <span>"save"</span> on a game or video to store favorites here</h3>
           <div className="actions">
-            <ActionButton link={{ pathname: '/age', state: { user_id: userId } }} color="#333">Back to Age Picker</ActionButton>
+            <ActionButton link={{ pathname: '/age', state: { user_id: userId } }} color="#333">Back to Age</ActionButton>
           </div>
         </section>
     </main>
@@ -100,7 +100,7 @@ function FavoritePage() {
                 }
             </div>
             <div className="actions">
-              <ActionButton link={{ pathname: '/age', state: { user_id: userId } }} color="#333">Back to Age Picker</ActionButton>
+              <ActionButton link={{ pathname: '/age', state: { user_id: userId } }} color="#333">Back to Age</ActionButton>
             </div>
         </section>
     </main>

@@ -25,7 +25,7 @@ function CategoryPicker(props) {
 
       <div className="actions">
         <ActionButton link={{ pathname:'/favorite', state:{ user_id: user_id } }}/>
-        <ActionButton link={{ pathname:'/age', state:{ user_id: user_id } }} color="#333">Back</ActionButton>
+        <ActionButton link={{ pathname:'/age', state:{ user_id: user_id } }} color="#333">Back To Age</ActionButton>
       </div>
 
     </Category>
