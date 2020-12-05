@@ -10,6 +10,7 @@
 An app that you can feel safe letting your child use for watching videos and playing games.
 ## Table of Contents
 - [Usage](#usage)
+- [App Structure](#app-structure)
 - [Media](#Media)
 - [Languages](#languages)
 - [Deployed](#Deployed)
@@ -20,12 +21,14 @@ An app that you can feel safe letting your child use for watching videos and pla
 ## Usage
 
 Welcome to the “Parent Break Fun App”. While there are thousands of ways to keep your kids occupied on the internet how many of them are safe and easy to use. Let them use youtube and who knows what rabbit hole they might fall down. Do you really have time to get them logged into one of their online learning programs on the fly?
-  This is where our Parent Break App comes in. You can hand your child the app and they can occupy themselves with prescreened and selected games and videos. They have the ability to save their favorites for easy viewing and there is content for different age groups. 
-  After creating an account and logging in you can select the age of the child who is using the app. For younger  children themes are presented simply by category. For older kids they can choose if they want to watch videos or games. The games and videos selected are age appropriate for each level. 
-  We add the videos and game selections to the site ourselves instead of allowing for youtube or game sites to pick what they see we pre screen it. We also disable clicking out of the videos and limit ads for added peace of mind. 
-  The project uses React and React components to work smoothly with reusable components. The styling is done with SCSS. 
+  This is where our Parent Break App comes in. You can hand your child the app and they can occupy themselves with prescreened and selected games and videos. They have the ability to save their favorites for easy viewing and there is content for different age groups.
+  After creating an account and logging in you can select the age of the child who is using the app. For younger  children themes are presented simply by category. For older kids they can choose if they want to watch videos or games. The games and videos selected are age appropriate for each level.
+  We add the videos and game selections to the site ourselves instead of allowing for youtube or game sites to pick what they see we pre screen it. We also disable clicking out of the videos and limit ads for added peace of mind.
+  The project uses React and React components to work smoothly with reusable components. The styling is done with SCSS.
 
+## App-Structure
 
+![App structure](https://user-images.githubusercontent.com/66336525/101233221-0731bc80-366c-11eb-872a-583957c7060b.png)
 
 
 ## Media
