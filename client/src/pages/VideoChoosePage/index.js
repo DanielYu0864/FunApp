@@ -38,7 +38,7 @@ function VideoChoosePage() {
       <VideoPage videoList={videoList} user_id={user_id}/>
       <div className="actions">
         <ActionButton link={{ pathname: '/favorite', state: { user_id: user_id } }} />
-        <ActionButton link={{ pathname: '/media', state: { age: age, user_id: user_id } }} color="#333">Back to media</ActionButton>
+        <ActionButton link={{ pathname: '/media', state: { age: age, user_id: user_id } }} color="#333">Back To Media</ActionButton>
       </div>
     </div>
   )
