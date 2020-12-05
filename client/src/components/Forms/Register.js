@@ -48,11 +48,11 @@ export function Register() {
     }
     //* check password length
     if (password.length < 6) {
-      return alert('Password has to be longer than 6')
+      return alert('Password must be longer than 6 characters')
     }
     //* check password equal to confirm password
     if (password !== password2) {
-      return alert('Password has to be the same')
+      return alert('Passwords must match')
     } else {
       //* post the new user data to the data base
       API.register({
