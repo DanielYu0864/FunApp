@@ -20,7 +20,7 @@ function GameContainer({game, backToOptions, user_id}) {
     API.save(gameObject, userId)
       .then(e => {
         console.log(e);
-        if(e.status === 200) alert('Game Save!');
+        if(e.status === 200) alert('Game Saved to Favorites!');
       })
       .catch(err => {
         console.error(err);
