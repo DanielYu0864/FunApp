@@ -33,11 +33,12 @@ function FavoriteContainer({favorite, user_id, backToOptions}) {
   }
   //* use iframe to display the data
   return (
-    <div>
-      <h1>{favoriteObj.title}</h1>
+    <section className='media'>
+      <div className='medai__container'>
+      <h2 className='media__title'>{favoriteObj.title}</h2>
       <iframe
         title={favoriteObj.title}
-        className='game__display'
+        className='media__display'
         title={favoriteObj.title}
         src={favoriteObj.imbedLink}
         scrolling={favoriteObj.scrolling}
@@ -50,10 +51,15 @@ function FavoriteContainer({favorite, user_id, backToOptions}) {
         picture-in-picture"
         sandbox='allow-forms allow-scripts allow-modals allow-orientation-lock allow-pointer-lock allow-presentation allow-same-origin allow-top-navigation allow-top-navigation-by-user-activation allow-popups-to-escape-sandbox'
       />
-      <button onClick={deleteBtn}>Remove</button>
-      <button onClick={backToOptions}>Back</button>
-    </div>
+      <div className='media__buttons'>
+        <button className='media__button' onClick={deleteBtn}>Remove</button>
+      <button className='media__button' onClick={backToOptions}>Back</button>
+      </div>
+      </div>
+    </section>
+
   )
 }
+
 
 export default FavoriteContainer
