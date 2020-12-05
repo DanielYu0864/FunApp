@@ -1,4 +1,4 @@
-# Family Fun App!
+# Parent Break Fun App!
 [![License: ISC](https://img.shields.io/badge/License-ISC-green.svg)](https://opensource.org/licenses/ISC)
 
 
@@ -14,11 +14,17 @@ An app that you can feel safe letting your child use for watching videos and pla
 - [Languages](#languages)
 - [Deployed](#Deployed)
 - [Questions](#questions)
+- [Contributers](#contributers)
 
 
 ## Usage
 
-Use it to destract your kids
+Welcome to the “Parent Break Fun App”. While there are thousands of ways to keep your kids occupied on the internet how many of them are safe and easy to use. Let them use youtube and who knows what rabbit hole they might fall down. Do you really have time to get them logged into one of their online learning programs on the fly?
+  This is where our Parent Break App comes in. You can hand your child the app and they can occupy themselves with prescreened and selected games and videos. They have the ability to save their favorites for easy viewing and there is content for different age groups. 
+  After creating an account and logging in you can select the age of the child who is using the app. For younger  children themes are presented simply by category. For older kids they can choose if they want to watch videos or games. The games and videos selected are age appropriate for each level. 
+  We add the videos and game selections to the site ourselves instead of allowing for youtube or game sites to pick what they see we pre screen it. We also disable clicking out of the videos and limit ads for added peace of mind. 
+  The project uses React and React components to work smoothly with reusable components. The styling is done with SCSS. 
+
 
 
 
@@ -38,11 +44,11 @@ Use it to destract your kids
 ### Age Picker
 ![Capture](https://user-images.githubusercontent.com/65681350/101231460-48bc6a80-3660-11eb-9095-9f23fc59fb94.PNG)
 
-### Media
+### Select Media
 ![Capture](https://user-images.githubusercontent.com/65681350/101231468-5a9e0d80-3660-11eb-8d37-c585765fd9b7.PNG)
 ![Capture](https://user-images.githubusercontent.com/65681350/101231498-88835200-3660-11eb-98e5-6ff526236995.PNG)
 
-## Choice Page
+### Choice Page
 
 ![Screenshot (188)](https://user-images.githubusercontent.com/66336525/101231929-57f0e780-3663-11eb-80fc-fb77a3a2e7da.png)
 
@@ -66,6 +72,8 @@ Deployed on Heroku
 ## Questions
 
 Contact us via email or github with questions.
+
+## Contributers
 - Daniel Yu:
 - [DanielYu0864](https://github.com/DanielYu0864)
 - adam741963@gmail.com
