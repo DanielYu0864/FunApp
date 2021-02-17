@@ -71,7 +71,7 @@ React, React Router, JavaScript, SCSS, JSX, Node.JS, MongoDB
 Deployed on Heroku
 - https://project03familyapp.herokuapp.com/
 ## Repository
-- https://github.com/DanielYu0864/Project-03
+- https://github.com/DanielYu0864/FunApp
 ## Questions
 
 Contact us via email or github with questions.
